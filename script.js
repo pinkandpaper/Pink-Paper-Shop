@@ -30,7 +30,7 @@ const WHATSAPP_NUMBER = "201043063085";
 
 const PRODUCTS = [
   {
-    id: "PP001",
+    id: "1",
     name: "كريكتور",
     description: "شكل باندا 4 مللي",
     price: 10,
@@ -39,7 +39,7 @@ const PRODUCTS = [
   },
 
   {
-    id: "PP002",
+    id: "2",
     name: "أستيكة Cake Roll \u2764\uFE0F",
     description: "يلا نحلي بالكيك \uD83D\uDE0D",
     price: 20,
@@ -50,7 +50,7 @@ const PRODUCTS = [
   },
 
   {
-    id: "PP003",
+    id: "3",
     name: "نوتة كرومي 4 فواصل \uD83C\uDF80",
     description: "مقاس 10*12 سم تقريباً ",
     price: 30,
@@ -61,7 +61,7 @@ const PRODUCTS = [
   },
 
   {
-    id: "PP004",
+    id: "4",
     name: "أستيكة ايس كريم \uD83D\uDE0D",
     description: "",
     price: 15,
@@ -70,16 +70,33 @@ const PRODUCTS = [
   },
 
   {
-    id: "PP005",
+    id: "5",
     name: "استكية قلم سوستة \u2665\uFE0F ",
     description: "استيكة حجم كبير",
     price: 45,
-    image: "images/pen/photo_2026-08-15_23-21-08.jpg",
+    images: ["images/pen/photo_2026-08-15_23-21-08.jpg",
+      "images/pen/hjhjkhjhj.jpg",
+      "images/pen/jdsfja.jpg",
+      "images/pen/photo_2026-08-17_22-56-18.jpg"
+    ],
     category: "cute",
   },
 
   {
-    id: "PP006",
+    id: "6",
+    name: "ستيكي نوتس دبدوب \u2764\uFE0F",
+    description: "ورقها ناعم وكريمي جدا\uD83E\uDD0D فيها 70 ورقة",
+    price: 95,
+    images: [
+      "images/NOTES/photo_2026-08-15_23-31-33.jpg",
+      "images/NOTES/photo_2026-08-15_23-31-35.jpg",
+      "images/NOTES/photo_2026-08-15_23-31-37 (2).jpg",
+      "images/NOTES/photo_2026-08-15_23-31-37.jpg"
+    ],
+    category: "cute",
+  },
+  {
+    id: "7",
     name: "ستيكي نوتس دبدوب \u2764\uFE0F",
     description: "ورقها ناعم وكريمي جدا\uD83E\uDD0D فيها 70 ورقة",
     price: 95,
@@ -93,24 +110,45 @@ const PRODUCTS = [
   },
 
   {
-    id: "PP007",
-    name: "كشكول سلك فواصل بلاستيك – حجم A5 \u2728",
-    description: `\u2714\uFE0F عدد 124 ورقة
-\u2714\uFE0F متقسم .. ألوانه كلها باستيل \u2665\uFE0F
-\u2714\uFE0F حجم A5 عملي يدخل الشنطة
-\u2714\uFE0F خامة ورق ممتازة`,
-    price: 150,
-    image: "images/NOTES/photo_2026-08-16_00-00-14.jpg",
-    category: "cute",
+    id: "8",
+    name: "قلم سنون مجسم سليكون ♥️",
+    description:"" ,
+    price:15 ,
+    image: "images/pen/penssssss.jpg",
+    category: "pens",
   },
 
   {
-    id: "PP008",
-    name: "Washi Tape Set (6 rolls)",
-    description: "Patterned washi tape rolls for decorating anything.",
-    price: 95,
-    image: "https://placehold.co/500x500/fbe2e8/5b4038?text=Washi+Tape",
-    category: "cute",
+    id: "9",
+    name: "قلم جاف باستكية ",
+    description: "قلم جاف عملي بحبر قابل للمسح، مناسب للمدرسة والمذاكرة والكتابة اليومية. تقدر تمسح أخطاءك بسهولة وتكتب من جديد بدون فوضى أو شخبطة على الورق. 🖊️",
+    price: 25,
+    image: "images/pen/hgsdhdjhhfdsh.jpg",
+    category: "pens",
+  },
+  {
+    id: "10",
+    name: "",
+    description: "",
+    price: 6,
+    image: "",
+    category: "",
+  },
+  {
+    id: "11",
+    name: "",
+    description: "",
+    price: 6,
+    image: "",
+    category: "",
+  },
+  {
+    id: "12",
+    name: "",
+    description: "",
+    price: 6,
+    image: "",
+    category: "",
   },
 ];
 
