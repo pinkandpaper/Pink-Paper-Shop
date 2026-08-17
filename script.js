@@ -627,10 +627,18 @@ function renderProducts() {
         productImages[0];
 
 
+      const searchText =
+        `${product.name} ${product.description}`
+          .toLowerCase()
+          .replace(/\s+/g, " ")
+          .replace(/"/g, "&quot;");
+
+
       return `
         <article
           class="product-card reveal"
           data-category="${product.category}"
+          data-search="${searchText}"
         >
 
           <div class="product-card__image-wrap">
@@ -2060,6 +2068,13 @@ function setupFooterYear() {
 /* Categories that actually have at least one product right now,
    in the same order as CATEGORY_LABELS. */
 
+/* Current filter state: which category chip is active,
+   and whatever the person has typed in the search box. */
+
+let currentCategory = "all";
+let currentSearchTerm = "";
+
+
 function getActiveCategories() {
 
   const categoriesWithProducts =
@@ -2150,23 +2165,68 @@ function markEmptyCategoryCards() {
 }
 
 
-/* Show only the product cards matching `category` ("all" shows everything),
-   with a soft fade + scale transition, and sync the active chip/category card. */
+/* Show only the product cards matching the active category AND the
+   active search term, with a soft fade + scale transition, and sync
+   the active chip/category card. Call this whenever either changes. */
 
 function filterProducts(category) {
+
+  currentCategory = category;
+
+  applyFilters();
+
+
+  document
+    .querySelectorAll(".filter-chip")
+    .forEach((chip) => {
+
+      chip.classList.toggle(
+        "is-active",
+        chip.dataset.filter === category
+      );
+
+    });
+
+
+  document
+    .querySelectorAll(".category-card")
+    .forEach((card) => {
+
+      card.classList.toggle(
+        "is-active",
+        card.dataset.filter === category
+      );
+
+    });
+
+}
+
+
+function applyFilters() {
 
   const productCards =
     document.querySelectorAll(".product-card");
 
+  let visibleCount = 0;
+
 
   productCards.forEach((card) => {
 
+    const matchesCategory =
+      currentCategory === "all" ||
+      card.dataset.category === currentCategory;
+
+    const matchesSearch =
+      currentSearchTerm === "" ||
+      card.dataset.search.includes(currentSearchTerm);
+
     const matches =
-      category === "all" ||
-      card.dataset.category === category;
+      matchesCategory && matchesSearch;
 
 
     if (matches) {
+
+      visibleCount++;
 
       card.style.display = "flex";
 
@@ -2197,28 +2257,47 @@ function filterProducts(category) {
   });
 
 
-  document
-    .querySelectorAll(".filter-chip")
-    .forEach((chip) => {
+  const noResults =
+    document.getElementById("noResults");
 
-      chip.classList.toggle(
-        "is-active",
-        chip.dataset.filter === category
-      );
+  if (noResults) {
 
-    });
+    noResults.classList.toggle(
+      "is-visible",
+      visibleCount === 0
+    );
+
+  }
+
+}
 
 
-  document
-    .querySelectorAll(".category-card")
-    .forEach((card) => {
+function setupSearch() {
 
-      card.classList.toggle(
-        "is-active",
-        card.dataset.filter === category
-      );
+  const searchInput =
+    document.getElementById("searchInput");
 
-    });
+  if (!searchInput) return;
+
+
+  let debounceTimer;
+
+
+  searchInput.addEventListener("input", () => {
+
+    clearTimeout(debounceTimer);
+
+
+    debounceTimer = setTimeout(() => {
+
+      currentSearchTerm =
+        searchInput.value.trim().toLowerCase();
+
+      applyFilters();
+
+    }, 150);
+
+  });
 
 }
 
@@ -2287,6 +2366,8 @@ document.addEventListener(
     setupThankYou();
 
     setupCategoryFilters();
+
+    setupSearch();
 
     setupScrollReveal();
 

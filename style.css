@@ -3045,3 +3045,91 @@ body {
   background-color: var(--color-pink-soft);
   box-shadow: var(--shadow-lift);
 }
+
+/* =========================================================
+   PRODUCT SEARCH BOX
+   ========================================================= */
+
+.search-bar {
+  position: relative;
+
+  max-width: 420px;
+  margin: 0 auto 26px;
+}
+
+.search-bar__icon {
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%);
+
+  font-size: 1rem;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.search-bar__input {
+  width: 100%;
+
+  padding: 13px 48px 13px 18px;
+
+  border: 1.5px solid rgba(91, 64, 56, 0.14);
+  border-radius: var(--radius-pill);
+
+  background-color: var(--color-white);
+
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--color-brown);
+
+  direction: rtl;
+  text-align: right;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-bar__input::placeholder {
+  color: rgba(91, 64, 56, 0.4);
+}
+
+.search-bar__input:focus {
+  outline: none;
+  border-color: var(--color-pink-deep);
+  box-shadow: 0 0 0 3px rgba(231, 139, 160, 0.18);
+}
+
+/* =========================================================
+   NO RESULTS STATE
+   ========================================================= */
+
+.no-results {
+  display: none;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 60px 20px;
+}
+
+.no-results.is-visible {
+  display: flex;
+}
+
+.no-results span {
+  font-size: 2.6rem;
+  margin-bottom: 12px;
+}
+
+.no-results h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.no-results p {
+  color: var(--color-brown-soft);
+  font-size: 0.9rem;
+  text-align: center;
+}

@@ -402,6 +402,18 @@
               اطلب أي منتج مباشرة عبر واتساب، دون الحاجة إلى إنشاء حساب.
             </p>
           </div>
+          <!-- Search box -->
+          <div class="search-bar">
+            <span class="search-bar__icon">🔍</span>
+            <input
+              type="text"
+              id="searchInput"
+              class="search-bar__input"
+              placeholder="دوري على منتج... (مثلاً: دفتر، أستيكة)"
+              autocomplete="off"
+            />
+          </div>
+
           <!-- Filter chips: built dynamically in script.js from product categories -->
           <div class="filter-bar" id="filterBar"></div>
 
@@ -409,6 +421,13 @@
              but static markup is included so the grid also works without JS. -->
           <div class="product-grid" id="productGrid">
             <!-- JS will inject product cards here -->
+          </div>
+
+          <!-- Shown when search/filter combo matches nothing -->
+          <div class="no-results" id="noResults">
+            <span>🔍</span>
+            <h3>مفيش منتجات مطابقة</h3>
+            <p>جربي كلمة تانية أو اختاري "الكل" من فوق.</p>
           </div>
         </div>
       </section>
