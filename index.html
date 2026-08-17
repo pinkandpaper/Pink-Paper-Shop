@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Tajawal:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pink & Paper — Your Cute Stationery Corner 🎀</title>
+    <meta
+      name="description"
+      content="Pink & Paper — cute, affordable stationery for students who love pretty, organized desks. Order easily via WhatsApp."
+    />
+
+    <!-- Google Fonts: Fraunces (display) + Quicksand (body/UI) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%80%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ============ NAVBAR ============ -->
+    <header class="navbar" id="navbar">
+      <div class="navbar__inner container">
+        <a href="#home" class="logo">
+          <img src="images/logo.png" alt="Pink & Paper Logo" />
+        </a>
+        <nav class="nav-links" id="navLinks">
+          <a href="#home" class="nav-link">الرئيسية</a>
+          <a href="#products" class="nav-link">المنتجات</a>
+          <a href="#categories" class="nav-link">التصنيفات</a>
+          <a href="#about" class="nav-link">قصتنا</a>
+          <a href="#contact" class="nav-link">تواصل</a>
+          <a href="#products" class="btn btn--primary btn--small nav-cta"
+            >المنتجات</a
+          >
+          
+        </nav>
+        <!-- Cart Button -->
+        <button class="cart-toggle" id="cartToggle" aria-label="فتح السلة">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <!-- Favorites Button -->
+<button class="favorites-toggle" id="favoritesToggle" aria-label="فتح المفضلة">
+  <span class="favorites-icon">❤️</span>
+  <span class="favorites-count" id="favoritesCount">0</span>
+</button>
+
+        <!-- Mobile menu toggle (hamburger) -->
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+<!-- ============ SHOPPING CART ============ -->
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<aside class="cart" id="cart">
+  <div class="cart__header">
+    <div>
+      <span class="tape-label">مشترياتك</span>
+      <h2>سلة المشتريات 🛒</h2>
+    </div>
+
+    <button
+      class="cart__close"
+      id="cartClose"
+      aria-label="إغلاق السلة"
+    >
+      ×
+    </button>
+  </div>
+
+  <!-- Products will be added here by JavaScript -->
+  <div class="cart__items" id="cartItems">
+    <div class="cart__empty" id="cartEmpty">
+      <span>🛍️</span>
+      <h3>السلة فارغة</h3>
+      <p>أضف المنتجات التي تعجبك وسنجهز طلبك لك.</p>
+    </div>
+  </div>
+
+  <!-- Cart Footer -->
+  <div class="cart__footer">
+
+    <!-- Customer info form -->
+    <div class="checkout-form" id="checkoutForm">
+      <span class="tape-label">بيانات التوصيل</span>
+
+      <div class="form-field">
+        <label for="customerName">الاسم بالكامل</label>
+        <input
+          type="text"
+          id="customerName"
+          placeholder="اكتبي اسمك هنا"
+          autocomplete="name"
+        />
+        <span class="form-error" id="errorName"></span>
+      </div>
+
+      <div class="form-field">
+        <label for="customerPhone">رقم التواصل</label>
+        <input
+          type="tel"
+          id="customerPhone"
+          placeholder="01xxxxxxxxx"
+          autocomplete="tel"
+          inputmode="numeric"
+        />
+        <span class="form-error" id="errorPhone"></span>
+      </div>
+
+      <div class="form-field">
+        <label for="customerAddress">عنوان التوصيل</label>
+        <textarea
+          id="customerAddress"
+          placeholder="المحافظة، المنطقة، تفاصيل العنوان"
+          rows="2"
+          autocomplete="street-address"
+        ></textarea>
+        <span class="form-error" id="errorAddress"></span>
+      </div>
+    </div>
+
+    <div class="cart__total">
+      <span>الإجمالي</span>
+      <strong id="cartTotal">0 جنيه</strong>
+    </div>
+
+    <button class="cart__whatsapp" id="cartWhatsapp">
+      💬 إرسال الطلب عبر واتساب
+    </button>
+
+    <button class="cart__clear" id="cartClear">
+      إفراغ السلة
+    </button>
+  </div>
+</aside>
+
+<!-- ============ FAVORITES ============ -->
+<div class="favorites-overlay" id="favoritesOverlay"></div>
+
+<aside class="favorites" id="favorites">
+
+  <div class="favorites__header">
+    <div>
+      <span class="tape-label">اختياراتك</span>
+      <h2>المنتجات المفضلة ❤️</h2>
+    </div>
+
+    <button
+      class="favorites__close"
+      id="favoritesClose"
+      aria-label="إغلاق المفضلة"
+    >
+      ×
+    </button>
+  </div>
+
+  <div class="favorites__items" id="favoritesItems">
+
+    <div class="favorites__empty">
+      <span>🤍</span>
+      <h3>لا توجد منتجات مفضلة</h3>
+      <p>
+        اضغط على ❤️ بجانب أي منتج لإضافته إلى مفضلاتك.
+      </p>
+    </div>
+
+  </div>
+
+</aside>
+
+    <main>
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="home">
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <h1 class="hero__title">
+              خلي مذاكرتك أحلى مع
+              <span class="brand-name">Pink &amp; Paper</span>
+
+              <!-- <br /> -->
+              <span class="wiggle">🌷</span>
+            </h1>
+            <p class="hero__subtitle">كل أدواتك المفضلة في مكان واحد</p>
+            <div class="hero__actions">
+              <a href="#products" class="btn btn--primary">تسوّق الآن </a>
+              <a href="#" class="btn btn--whatsapp" id="heroWhatsapp">
+                <svg class="icon-wa" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M17.6 6.32A8.86 8.86 0 0 0 12.03 4a8.94 8.94 0 0 0-7.75 13.4L4 20.5l3.2-.84a8.9 8.9 0 0 0 4.83 1.41h.01a8.94 8.94 0 0 0 6.32-15.05zm-5.57 13.7a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.24.59.6-2.18-.18-.28a7.44 7.44 0 1 1 13.83-3.9 7.4 7.4 0 0 1-8 6.97zm4.07-5.56c-.22-.11-1.31-.65-1.51-.72-.2-.08-.35-.11-.5.11-.15.22-.57.72-.7.87-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.1-.66-.6-1.11-1.33-1.24-1.55-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.05-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.39.06-.6.28-.2.22-.78.76-.78 1.86s.8 2.16.91 2.31c.11.15 1.56 2.38 3.78 3.34.53.23.94.36 1.26.47.53.17 1.01.14 1.39.09.42-.06 1.31-.53 1.5-1.05.18-.51.18-.95.13-1.05-.05-.09-.2-.15-.42-.26z"
+                  />
+                </svg>
+                اطلب عبر واتساب
+              </a>
+            </div>
+            <div class="hero__trust">
+              <span>🚚 توصيل سريع</span>
+              <span>💌 تغليف هدايا</span>
+            </div>
+          </div>
+
+          <!-- Signature visual: illustrated "desk flatlay" made of layered cards -->
+          <div class="hero__visual" aria-hidden="true">
+            <div class="flatlay">
+              <div class="flatlay__card flatlay__card--notebook">
+                <span class="flatlay__emoji">📓</span>
+                <span class="flatlay__label">دفاتر</span>
+              </div>
+              <div class="flatlay__card flatlay__card--pens">
+                <span class="flatlay__emoji">🖊️</span>
+                <span class="flatlay__label">أقلام</span>
+              </div>
+              <div class="flatlay__card flatlay__card--sticky">
+                <span class="flatlay__emoji">🗒️</span>
+                <span class="flatlay__label">ستيكي نوتس</span>
+              </div>
+              <div class="flatlay__tape flatlay__tape--1"></div>
+              <div class="flatlay__tape flatlay__tape--2"></div>
+              <div class="flatlay__dot"></div>
+              <div class="flatlay__dot flatlay__dot--2"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CATEGORIES ============ -->
+      <!-- ============ CATEGORIES ============ -->
+<section class="section categories-section" id="categories">
+  <div class="container">
+
+    <div class="section__head">
+      <span class="tape-label">تصفّحي حسب الفئة</span>
+
+      <h2 class="section__title">
+        إيه اللي بتدور عليه؟ 💕
+      </h2>
+
+      <p class="section__subtitle">
+        اختار الفئة وشوف المنتجات اللي تناسبك
+      </p>
+    </div>
+
+
+    <div class="category-grid">
+
+      <!-- Pens -->
+      <a
+        href="#products"
+        class="category-card"
+        data-filter="pens"
+      >
+        <span class="category-card__icon">✏️</span>
+
+        <h3>أقلام</h3>
+
+        <p>
+          أقلام وأدوات للكتابة والمذاكرة اليومية.
+        </p>
+
+        <span class="category-card__link">
+          تصفح الأقلام ←
+        </span>
+      </a>
+
+
+      <!-- Notebooks -->
+      <a
+        href="#products"
+        class="category-card"
+        data-filter="notebooks"
+      >
+        <span class="category-card__icon">📓</span>
+
+        <h3>دفاتر</h3>
+
+        <p>
+          نوت بوك وكشاكيل لكل ملاحظاتك وأفكارك.
+        </p>
+
+        <span class="category-card__link">
+          تصفح الدفاتر ←
+        </span>
+      </a>
+
+
+      <!-- Art -->
+      <a
+        href="#products"
+        class="category-card"
+        data-filter="art"
+      >
+        <span class="category-card__icon">🎨</span>
+
+        <h3>الرسم والفنون</h3>
+
+        <p>
+          أدوات وألوان لكل لمسة إبداعية.
+        </p>
+
+        <span class="category-card__link">
+          تصفح مستلزمات الرسم ←
+        </span>
+      </a>
+
+
+      <!-- School -->
+      <a
+        href="#products"
+        class="category-card"
+        data-filter="school"
+      >
+        <span class="category-card__icon">🎒</span>
+
+        <h3>حقائب ومقالم</h3>
+
+        <p>
+          كل اللي تحتاجيه لترتيب أدواتك.
+        </p>
+
+        <span class="category-card__link">
+          تصفح الحقائب والمقالم ←
+        </span>
+      </a>
+
+
+      <!-- Cute -->
+      <a
+        href="#products"
+        class="category-card"
+        data-filter="cute"
+      >
+        <span class="category-card__icon">🎀</span>
+
+        <h3>إضافات كيوت</h3>
+
+        <p>
+          تفاصيل صغيرة تخلي مكتبك ألطف.
+        </p>
+
+        <span class="category-card__link">
+          اكتشف الإضافات ←
+        </span>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+      <!-- ============ FEATURED PRODUCTS ============ -->
+      <section class="section section--tint" id="products">
+        <div class="container">
+          <div class="section__head">
+            <span class="tape-label">تصفّح مجموعتنا</span>
+            <h2 class="section__title">
+              <span class="wiggle">🎨</span>
+              أناقة مكتبك تبدأ من هنا
+            </h2>
+            <p class="section__subtitle">
+              اطلب أي منتج مباشرة عبر واتساب، دون الحاجة إلى إنشاء حساب.
+            </p>
+          </div>
+          <!-- Product cards are generated dynamically from data in script.js,
+             but static markup is included so the grid also works without JS. -->
+          <div class="product-grid" id="productGrid">
+            <!-- JS will inject product cards here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ WHY PINK & PAPER ============ -->
+      <section class="section" id="why">
+        <div class="container">
+          <div class="section__head">
+            <span class="tape-label">لماذا نحن؟</span>
+            <h2 class="section__title">Why Pink &amp; Paper</h2>
+          </div>
+
+          <div class="feature-grid">
+            <div class="feature-card">
+              <span class="feature-card__icon">🎀</span>
+              <h3>منتجات لطيفة ومميزة</h3>
+              <p>منتجات مختارة بعناية لتجد ما يناسب ذوقك واحتياجاتك.</p>
+            </div>
+            <div class="feature-card">
+              <span class="feature-card__icon">💸</span>
+              <h3>أسعار مناسبة</h3>
+              <p>أدوات مكتبية جميلة بأسعار تناسب ميزانيتك.</p>
+            </div>
+            <div class="feature-card">
+              <span class="feature-card__icon">📦</span>
+              <h3>تغليف بعناية</h3>
+              <p>نغلف كل طلب بعناية ليصلك في أجمل صورة.</p>
+            </div>
+            <div class="feature-card">
+              <span class="feature-card__icon">💬</span>
+              <h3>طلب سهل وسريع</h3>
+              <p>تواصل معنا عبر واتساب وأرسل طلبك بكل سهولة.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PROMOTIONAL BANNER ============ -->
+      <section class="promo">
+        <div class="container promo__inner">
+          <span class="promo__deco" aria-hidden="true">🎀</span>
+          <h2 class="promo__title">زيّني مساحتك بما يشبهك</h2>
+          <!-- <p class="promo__subtitle">Find something you'll love.</p> -->
+          <a href="#products" class="btn btn--light">Explore Products</a>
+        </div>
+      </section>
+
+      <!-- ============ ABOUT ============ -->
+      <section class="section" id="about">
+        <div class="container about__inner">
+          <div class="about__visual">
+            <div class="about__blob">
+              <img src="images/logo.png" alt="Pink & Paper" />
+            </div>
+          </div>
+
+          <div class="about__content">
+            <span class="tape-label">قصتنا</span>
+
+            <h2 class="section__title">About Pink &amp; Paper</h2>
+
+            <p>كل حكاية جميلة تبدأ بفكرة صغيرة...</p>
+
+            <p>
+              بدأت Pink &amp; Paper من حبٍّ بسيط للأشياء التي تجعل الأيام
+              العادية أكثر جمالًا؛ من رائحة الورق الجديد، ومن أول صفحةٍ بيضاء
+              تنتظر أن تُكتب، ومن أقلامٍ ملوّنة تجعل حتى الملاحظات الصغيرة تبدو
+              كأن لها حكاية.
+            </p>
+
+            <p>
+              لطالما رأينا أن المكتب ليس مجرد مكانٍ للدراسة، بل مساحةٌ نلتقي
+              فيها بأفكارنا، ونخطّ فيها خططنا، ونحاول فيها أن نقترب خطوةً أخرى
+              من أحلامنا.
+            </p>
+
+            <p>
+              ومن هنا جاءت فكرتنا: أن نصنع عالمًا صغيرًا يجمع كل ما يجعل تلك
+              المساحة أكثر دفئًا، وكل ما يجعل لحظات الدراسة والعمل والإبداع أكثر
+              متعة.
+            </p>
+
+            <p>
+              في Pink &amp; Paper، نختار كل قطعة بعناية؛ من الدفاتر التي تحفظ
+              أفكارك، إلى الأقلام التي ترافق أول خطٍّ تخطّه على الورق، والتفاصيل
+              الصغيرة التي تمنح مكتبك شيئًا من روحك.
+            </p>
+
+            <p>
+              فنحن نؤمن أن الأشياء العظيمة لا تبدأ دائمًا بخطواتٍ كبيرة؛ أحيانًا
+              تبدأ بصفحةٍ بيضاء، وقلمٍ في يدك، وفكرةٍ تكتبها للمرة الأولى.
+            </p>
+
+            <p>
+              ولهذا أنشأنا Pink &amp; Paper؛ لنكون جزءًا من تلك البدايات الصغيرة
+              التي قد تقود يومًا إلى أحلامٍ كبيرة.
+            </p>
+
+            <p>
+              فربما تكون الصفحة التي تكتبين عليها اليوم، هي أول صفحةٍ في أجمل
+              حكاياتك. 🎀
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section class="section section--tint" id="contact">
+        <div class="container">
+          <div class="section__head">
+            <span class="tape-label">مرحبًا بك🌷</span>
+            <h2 class="section__title">تواصل معنا</h2>
+            <p class="section__subtitle">
+              يسعدنا أن نسمع منك، سواء كان لديك استفسار أو اقتراح أو ترغب في طلب
+              أحد منتجاتنا.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <a
+              href="https://wa.me/201159627686"
+              id="contactWhatsapp"
+              class="contact-card"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="contact-card__icon">💬</span>
+              <h3>WhatsApp</h3>
+              <p>01159627686</p>
+            </a>
+            <a
+              href="https://wa.me/201159627686"
+              class="contact-card"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="contact-card__icon">📷</span>
+              <h3>Instagram</h3>
+              <p>@pinkandpaper</p>
+            </a>
+            <a href="mailto:hello@pinkandpaper.com" class="contact-card">
+              <span class="contact-card__icon">✉️</span>
+              <h3>Email</h3>
+              <p>hello@pinkandpaper.com</p>
+            </a>
+            <div class="contact-card contact-card--static">
+              <span class="contact-card__icon">📍</span>
+              <h3>Location</h3>
+              <p>مصر، سوهاج (متاح التوصيل في جميع أنحاء مصر)</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <a href="#home" class="logo logo--footer">
+            <img
+              src="images/logo.png"
+              alt="Pink & Paper Logo"
+              class="footer-logo"
+            />
+          </a>
+          <p>Your Cute Stationery Corner</p>
+        </div>
+
+        <div class="footer__links">
+          <h4>Quick Links</h4>
+          <a href="#home">الرئيسية</a>
+          <a href="#products">المنتجات</a>
+          <a href="#categories">التصنيفات</a>
+          <a href="#about">قصتنا</a>
+          <a href="#contact">تواصل معنا</a>
+        </div>
+
+        <div class="footer__social">
+          <h4>Follow Us</h4>
+          <div class="footer__social-icons">
+            <a href="#" aria-label="Instagram" target="_blank" rel="noopener"
+              >📷</a
+            >
+            <a
+              href="#"
+              id="footerWhatsapp"
+              aria-label="WhatsApp"
+              target="_blank"
+              rel="noopener"
+              >💬</a
+            >
+            <a href="mailto:" aria-label="Email">✉️</a>
+          </div>
+        </div>
+      </div>
+      <p class="footer__copy">
+        © <span id="year"></span> Pink &amp; Paper. All rights reserved. Made
+        with Fatma Alzahraa for stationery lovers.
+      </p>
+    </footer>
+
+    <!-- Back to top -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      ↑
+    </button>
+<!-- Floating Cart Button -->
+<button
+  id="floatingCartToggle"
+  class="floating-cart"
+  aria-label="فتح السلة"
+>
+  <span>🛒</span>
+  <span class="floating-cart-count" id="floatingCartCount">0</span>
+</button>
+    <script src="script.js"></script>
+  </body>
+</html>
