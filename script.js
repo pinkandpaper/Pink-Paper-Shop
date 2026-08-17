@@ -7,11 +7,16 @@
    1. STORE CONFIG
    -------------------------------------------------------------------------- */
 
-const WHATSAPP_NUMBER = "201159627686";
+const WHATSAPP_NUMBER = "201043063085";
 
 
 /* --------------------------------------------------------------------------
    2. PRODUCT DATA
+
+   To mark any product as OUT OF STOCK / SOLD OUT, just add:
+       soldOut: true,
+   to that product's object below (see example format).
+   Remove it (or set it to false) whenever the item is back in stock.
    -------------------------------------------------------------------------- */
 
 const PRODUCTS = [
@@ -84,6 +89,21 @@ const PRODUCTS = [
     category: "cute",
   },
 ];
+
+
+/* --------------------------------------------------------------------------
+   2B. CATEGORY LABELS
+   Display label (with emoji) for each category key. Order here also
+   controls the order the filter chips appear in.
+   -------------------------------------------------------------------------- */
+
+const CATEGORY_LABELS = {
+  pens: "✏️ أقلام",
+  notebooks: "📓 دفاتر",
+  art: "🎨 الرسم والفنون",
+  school: "🎒 حقائب ومقالم",
+  cute: "🎀 إضافات كيوت",
+};
 
 
 /* --------------------------------------------------------------------------
@@ -1378,13 +1398,61 @@ function sendCartToWhatsApp() {
 Thank you! 💕`;
 
 
-  /* Open WhatsApp without popup blocker */
+  /* Open WhatsApp in a new tab, so the store stays open behind it */
 
   const whatsappLink =
     buildWhatsAppLink(message);
 
 
-  window.location.href = whatsappLink;
+  window.open(whatsappLink, "_blank", "noopener");
+
+
+  /* Reset the cart + form, close the cart drawer,
+     then show the thank-you confirmation */
+
+  cart = [];
+
+  renderCart();
+
+  updateCartCount();
+
+
+  const checkoutForm =
+    document.getElementById("checkoutForm");
+
+  if (checkoutForm) {
+
+    checkoutForm
+      .querySelectorAll("input, textarea")
+      .forEach((field) => {
+
+        field.value = "";
+
+        const wrapper =
+          field.closest(".form-field");
+
+        if (wrapper) {
+
+          wrapper.classList.remove("has-error");
+
+        }
+
+      });
+
+    checkoutForm
+      .querySelectorAll(".form-error")
+      .forEach((errorEl) => {
+
+        errorEl.textContent = "";
+
+      });
+
+  }
+
+
+  closeCart();
+
+  openThankYou();
 
 }
 
@@ -1544,6 +1612,107 @@ function setupCart() {
   renderCart();
 
   updateCartCount();
+
+}
+
+
+/* --------------------------------------------------------------------------
+   26B. OPEN / CLOSE THANK YOU MODAL
+   -------------------------------------------------------------------------- */
+
+function openThankYou() {
+
+  const thankyouModal =
+    document.getElementById("thankyouModal");
+
+  const thankyouOverlay =
+    document.getElementById("thankyouOverlay");
+
+
+  if (!thankyouModal) return;
+
+
+  thankyouModal.classList.add("is-open");
+
+
+  if (thankyouOverlay) {
+
+    thankyouOverlay.classList.add("is-open");
+
+  }
+
+}
+
+
+function closeThankYou() {
+
+  const thankyouModal =
+    document.getElementById("thankyouModal");
+
+  const thankyouOverlay =
+    document.getElementById("thankyouOverlay");
+
+
+  if (!thankyouModal) return;
+
+
+  thankyouModal.classList.remove("is-open");
+
+
+  if (thankyouOverlay) {
+
+    thankyouOverlay.classList.remove("is-open");
+
+  }
+
+}
+
+
+/* --------------------------------------------------------------------------
+   26C. SETUP THANK YOU MODAL
+   -------------------------------------------------------------------------- */
+
+function setupThankYou() {
+
+  const thankyouClose =
+    document.getElementById("thankyouClose");
+
+  const thankyouOverlay =
+    document.getElementById("thankyouOverlay");
+
+
+  if (thankyouClose) {
+
+    thankyouClose.addEventListener(
+      "click",
+      closeThankYou
+    );
+
+  }
+
+
+  if (thankyouOverlay) {
+
+    thankyouOverlay.addEventListener(
+      "click",
+      closeThankYou
+    );
+
+  }
+
+
+  document.addEventListener(
+    "keydown",
+    (event) => {
+
+      if (event.key === "Escape") {
+
+        closeThankYou();
+
+      }
+
+    }
+  );
 
 }
 
@@ -1856,56 +2025,207 @@ function setupFooterYear() {
    CATEGORY FILTER
    -------------------------------------------------------------------------- */
 
-function setupCategoryFilters() {
+/* Categories that actually have at least one product right now,
+   in the same order as CATEGORY_LABELS. */
 
-  const categoryCards =
-    document.querySelectorAll(".category-card");
+function getActiveCategories() {
+
+  const categoriesWithProducts =
+    new Set(PRODUCTS.map(product => product.category));
+
+
+  return Object.keys(CATEGORY_LABELS).filter(
+    key => categoriesWithProducts.has(key)
+  );
+
+}
+
+
+/* Build the "الكل" + per-category chips above the product grid. */
+
+function renderFilterBar() {
+
+  const filterBar =
+    document.getElementById("filterBar");
+
+  if (!filterBar) return;
+
+
+  const activeCategories =
+    getActiveCategories();
+
+
+  const chipsHTML =
+    [`<button class="filter-chip is-active" type="button" data-filter="all">✨ الكل</button>`]
+      .concat(
+        activeCategories.map(
+          category => `
+            <button
+              class="filter-chip"
+              type="button"
+              data-filter="${category}"
+            >
+              ${CATEGORY_LABELS[category]}
+            </button>
+          `
+        )
+      )
+      .join("");
+
+
+  filterBar.innerHTML = chipsHTML;
+
+
+  filterBar
+    .querySelectorAll(".filter-chip")
+    .forEach((chip) => {
+
+      chip.addEventListener("click", () => {
+
+        filterProducts(chip.dataset.filter);
+
+      });
+
+    });
+
+}
+
+
+/* Mark category cards whose category has no products yet as "coming soon",
+   so the section still looks complete instead of leading to an empty grid. */
+
+function markEmptyCategoryCards() {
+
+  const activeCategories =
+    getActiveCategories();
+
+
+  document
+    .querySelectorAll(".category-card")
+    .forEach((card) => {
+
+      const isEmpty =
+        !activeCategories.includes(card.dataset.filter);
+
+
+      card.classList.toggle(
+        "category-card--soon",
+        isEmpty
+      );
+
+    });
+
+}
+
+
+/* Show only the product cards matching `category` ("all" shows everything),
+   with a soft fade + scale transition, and sync the active chip/category card. */
+
+function filterProducts(category) {
 
   const productCards =
     document.querySelectorAll(".product-card");
 
 
-  categoryCards.forEach((card) => {
+  productCards.forEach((card) => {
 
-    card.addEventListener("click", (event) => {
-
-      event.preventDefault();
-
-
-      const selectedCategory =
-        card.dataset.filter;
+    const matches =
+      category === "all" ||
+      card.dataset.category === category;
 
 
-      productCards.forEach((product) => {
+    if (matches) {
 
-        const productCategory =
-          product.dataset.category;
+      card.style.display = "flex";
 
 
-        if (
-          productCategory === selectedCategory
-        ) {
+      requestAnimationFrame(() => {
 
-          product.style.display = "flex";
-
-        } else {
-
-          product.style.display = "none";
-
-        }
+        card.classList.remove("is-filtering-out");
 
       });
 
+    } else {
 
-      document
-        .getElementById("products")
-        ?.scrollIntoView({
-          behavior: "smooth"
-        });
+      card.classList.add("is-filtering-out");
+
+
+      window.setTimeout(() => {
+
+        if (card.classList.contains("is-filtering-out")) {
+
+          card.style.display = "none";
+
+        }
+
+      }, 220);
+
+    }
+
+  });
+
+
+  document
+    .querySelectorAll(".filter-chip")
+    .forEach((chip) => {
+
+      chip.classList.toggle(
+        "is-active",
+        chip.dataset.filter === category
+      );
 
     });
 
-  });
+
+  document
+    .querySelectorAll(".category-card")
+    .forEach((card) => {
+
+      card.classList.toggle(
+        "is-active",
+        card.dataset.filter === category
+      );
+
+    });
+
+}
+
+
+function setupCategoryFilters() {
+
+  renderFilterBar();
+
+  markEmptyCategoryCards();
+
+
+  document
+    .querySelectorAll(".category-card")
+    .forEach((card) => {
+
+      card.addEventListener("click", (event) => {
+
+        event.preventDefault();
+
+
+        if (card.classList.contains("category-card--soon")) {
+
+          return;
+
+        }
+
+
+        filterProducts(card.dataset.filter);
+
+
+        document
+          .getElementById("products")
+          ?.scrollIntoView({
+            behavior: "smooth"
+          });
+
+      });
+
+    });
 
 }
 
@@ -1931,6 +2251,8 @@ document.addEventListener(
     setupCart();
 
     setupFavorites();
+
+    setupThankYou();
 
     setupCategoryFilters();
 

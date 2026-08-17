@@ -2816,3 +2816,227 @@ body {
     height: 52px;
   }
 }
+
+/* =========================================================
+   THANK YOU MODAL
+   ========================================================= */
+
+.thankyou-overlay {
+  position: fixed;
+  inset: 0;
+
+  background-color: rgba(91, 64, 56, 0.45);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  z-index: 299;
+}
+
+.thankyou-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.thankyou-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  width: min(400px, 88vw);
+
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lift);
+
+  padding: 40px 30px 34px;
+
+  text-align: center;
+  direction: rtl;
+
+  z-index: 300;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translate(-50%, -50%) scale(0.92);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.thankyou-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.thankyou-modal__icon {
+  display: inline-block;
+  font-size: 3rem;
+  margin-bottom: 14px;
+  animation: wiggle 3.5s ease-in-out infinite;
+}
+
+.thankyou-modal h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.thankyou-modal p {
+  font-size: 0.95rem;
+  color: var(--color-brown-soft);
+  line-height: 1.8;
+  margin-bottom: 26px;
+  text-align: center;
+}
+
+.thankyou-modal .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 700px) {
+  .thankyou-modal {
+    padding: 32px 22px 26px;
+  }
+
+  .thankyou-modal__icon {
+    font-size: 2.6rem;
+  }
+
+  .thankyou-modal h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* =========================================================
+   PRODUCT FILTER BAR
+   ========================================================= */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+
+  margin-bottom: 40px;
+}
+
+.filter-chip {
+  flex-shrink: 0;
+
+  padding: 10px 20px;
+
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--color-pink);
+
+  background-color: var(--color-white);
+  color: var(--color-brown);
+
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 700;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.filter-chip:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-pink-deep);
+}
+
+.filter-chip.is-active {
+  background-color: var(--color-pink-deep);
+  border-color: var(--color-pink-deep);
+  color: var(--color-white);
+  box-shadow: var(--shadow-card);
+}
+
+/* Smooth fade + scale when switching filters */
+.product-card {
+  opacity: 1;
+  transform: scale(1);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.22s ease;
+}
+
+.product-card.is-filtering-out {
+  opacity: 0;
+  transform: scale(0.94);
+  pointer-events: none;
+}
+
+/* Horizontal scroll on small screens instead of wrapping into many rows */
+@media (max-width: 560px) {
+  .filter-bar {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    margin-bottom: 30px;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-chip {
+    white-space: nowrap;
+  }
+}
+
+/* =========================================================
+   "COMING SOON" CATEGORY CARDS (no matching products yet)
+   ========================================================= */
+
+.category-card--soon {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.category-card--soon:hover {
+  transform: none;
+  box-shadow: var(--shadow-card);
+}
+
+.category-card--soon::after {
+  content: "قريبًا";
+
+  position: absolute;
+  top: 14px;
+  left: 14px;
+
+  padding: 4px 10px;
+
+  border-radius: var(--radius-pill);
+
+  background-color: var(--color-mauve);
+  color: var(--color-white);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+/* Highlight the category card matching the active filter */
+.category-card.is-active {
+  background-color: var(--color-pink-soft);
+  box-shadow: var(--shadow-lift);
+}

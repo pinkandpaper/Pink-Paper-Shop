@@ -190,6 +190,27 @@
 
 </aside>
 
+<!-- ============ THANK YOU MODAL ============ -->
+<div class="thankyou-overlay" id="thankyouOverlay"></div>
+
+<div
+  class="thankyou-modal"
+  id="thankyouModal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="thankyouTitle"
+>
+  <div class="thankyou-modal__content">
+    <span class="thankyou-modal__icon">🎀</span>
+    <h2 id="thankyouTitle">شكرًا لطلبك!</h2>
+    <p>
+      تم تجهيز طلبك وإرساله عبر واتساب، وهنتواصل معاكِ قريبًا لتأكيد
+      التفاصيل والتوصيل 💕
+    </p>
+    <button class="btn btn--primary" id="thankyouClose">متابعة التسوق</button>
+  </div>
+</div>
+
     <main>
       <!-- ============ HERO ============ -->
       <section class="hero" id="home">
@@ -381,6 +402,9 @@
               اطلب أي منتج مباشرة عبر واتساب، دون الحاجة إلى إنشاء حساب.
             </p>
           </div>
+          <!-- Filter chips: built dynamically in script.js from product categories -->
+          <div class="filter-bar" id="filterBar"></div>
+
           <!-- Product cards are generated dynamically from data in script.js,
              but static markup is included so the grid also works without JS. -->
           <div class="product-grid" id="productGrid">
@@ -505,7 +529,7 @@
 
           <div class="contact-grid">
             <a
-              href="https://wa.me/201159627686"
+              href="https://wa.me/201043063085"
               id="contactWhatsapp"
               class="contact-card"
               target="_blank"
@@ -513,10 +537,10 @@
             >
               <span class="contact-card__icon">💬</span>
               <h3>WhatsApp</h3>
-              <p>01159627686</p>
+              <p>01043063085</p>
             </a>
             <a
-              href="https://wa.me/201159627686"
+              href="https://wa.me/201043063085"
               class="contact-card"
               target="_blank"
               rel="noopener"
