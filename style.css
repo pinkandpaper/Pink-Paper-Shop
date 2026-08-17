@@ -1093,8 +1093,8 @@ p {
 /* ---------- 14. BACK TO TOP ---------- */
 .back-to-top {
   position: fixed;
-  bottom: 26px;
-  right: 26px;
+  bottom: 96px;
+  right: 25px;
   width: 46px;
   height: 46px;
   border-radius: 50%;
@@ -2814,6 +2814,11 @@ body {
 
     width: 52px;
     height: 52px;
+  }
+
+  .back-to-top {
+    right: 18px;
+    bottom: 84px;
   }
 }
 

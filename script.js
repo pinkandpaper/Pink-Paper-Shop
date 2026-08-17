@@ -110,7 +110,22 @@ const CATEGORY_LABELS = {
    3. SHOPPING CART
    -------------------------------------------------------------------------- */
 
-let cart = [];
+let cart =
+  JSON.parse(
+    localStorage.getItem("pinkPaperCart")
+  ) || [];
+
+
+/* Persist the cart to localStorage after every change. */
+
+function saveCart() {
+
+  localStorage.setItem(
+    "pinkPaperCart",
+    JSON.stringify(cart)
+  );
+
+}
 
 
 /* --------------------------------------------------------------------------
@@ -843,6 +858,8 @@ function addToCart(productIndex) {
 
   updateCartCount();
 
+  saveCart();
+
 
   const addButton =
     document.querySelector(
@@ -883,6 +900,8 @@ function removeFromCart(productIndex) {
   renderCart();
 
   updateCartCount();
+
+  saveCart();
 }
 
 
@@ -916,6 +935,8 @@ function changeQuantity(productIndex, amount) {
   renderCart();
 
   updateCartCount();
+
+  saveCart();
 }
 
 
@@ -988,6 +1009,11 @@ function renderCart() {
 
 
   if (!cartItems) return;
+
+
+  cart = cart.filter(
+    item => PRODUCTS[item.index]
+  );
 
 
   if (cart.length === 0) {
@@ -1416,6 +1442,8 @@ Thank you! 💕`;
 
   updateCartCount();
 
+  saveCart();
+
 
   const checkoutForm =
     document.getElementById("checkoutForm");
@@ -1589,6 +1617,8 @@ function setupCart() {
 
         updateCartCount();
 
+        saveCart();
+
       }
     );
 
@@ -1612,6 +1642,8 @@ function setupCart() {
   renderCart();
 
   updateCartCount();
+
+  saveCart();
 
 }
 
