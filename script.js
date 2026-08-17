@@ -28,8 +28,8 @@ const PRODUCTS = [
     category: "pens",
   },
   {
-    name: "أستيكة Cake Roll ❤️",
-    description: "يلا نحلي بالكيك 😍",
+    name: "أستيكة Cake Roll \u2764\uFE0F",
+    description: "يلا نحلي بالكيك \uD83D\uDE0D",
     price: 20,
     images: [
       "images/pen/photo_2026-08-15_22-08-20.jpg",
@@ -37,7 +37,7 @@ const PRODUCTS = [
     category: "pens",
   },
   {
-    name: "نوتة كرومي 4 فواصل 🎀",
+    name: "نوتة كرومي 4 فواصل \uD83C\uDF80",
     description: "مقاس 10*12 سم تقريباً ",
     price: 30,
     images: [
@@ -46,22 +46,22 @@ const PRODUCTS = [
     category: "school",
   },
   {
-    name: "أستيكة ايس كريم 😍",
+    name: "أستيكة ايس كريم \uD83D\uDE0D",
     description: "",
     price: 15,
     image: "images/pen/photo_2026-08-15_23-17-17.jpg",
     category: "art",
   },
   {
-    name: "استكية قلم سوستة ♥️ ",
+    name: "استكية قلم سوستة \u2665\uFE0F ",
     description: "استيكة حجم كبير",
     price: 45,
     image: "images/pen/photo_2026-08-15_23-21-08.jpg",
     category: "cute",
   },
   {
-    name: "ستيكي نوتس دبدوب ❤️",
-    description: "ورقها ناعم وكريمي جدا🤍 فيها 70 ورقة",
+    name: "ستيكي نوتس دبدوب \u2764\uFE0F",
+    description: "ورقها ناعم وكريمي جدا\uD83E\uDD0D فيها 70 ورقة",
     price: 95,
     images: [
       "images/NOTES/photo_2026-08-15_23-31-33.jpg",
@@ -72,11 +72,11 @@ const PRODUCTS = [
     category: "cute",
   },
   {
-    name: "كشكول سلك فواصل بلاستيك – حجم A5 ✨",
-    description: `✔️ عدد 124 ورقة
-✔️ متقسم .. ألوانه كلها باستيل ♥️
-✔️ حجم A5 عملي يدخل الشنطة
-✔️ خامة ورق ممتازة`,
+    name: "كشكول سلك فواصل بلاستيك – حجم A5 \u2728",
+    description: `\u2714\uFE0F عدد 124 ورقة
+\u2714\uFE0F متقسم .. ألوانه كلها باستيل \u2665\uFE0F
+\u2714\uFE0F حجم A5 عملي يدخل الشنطة
+\u2714\uFE0F خامة ورق ممتازة`,
     price: 150,
     image: "images/NOTES/photo_2026-08-16_00-00-14.jpg",
     category: "cute",
@@ -98,11 +98,12 @@ const PRODUCTS = [
    -------------------------------------------------------------------------- */
 
 const CATEGORY_LABELS = {
-  pens: "✏️ أقلام",
-  notebooks: "📓 دفاتر",
-  art: "🎨 الرسم والفنون",
-  school: "🎒 حقائب ومقالم",
-  cute: "🎀 إضافات كيوت",
+  pens: "\u270F\uFE0F أقلام",
+  notebooks: "\uD83D\uDCD3 دفاتر",
+  art: "\uD83C\uDFA8 الرسم والفنون",
+  school: "\uD83C\uDF92 حقائب ومقالم",
+  cute: "\uD83C\uDF80 إضافات كيوت",
+  
 };
 
 
@@ -153,7 +154,9 @@ function buildWhatsAppLink(message) {
    -------------------------------------------------------------------------- */
 
 function buildProductMessage(product) {
-  return `Hello Pink & Paper! 🎀
+  const bow = "\uD83C\uDF80";
+
+  return `Hello Pink & Paper! ${bow}
 I'd like to order:
 ${product.name}
 Price: ${product.price} EGP`;
@@ -209,12 +212,12 @@ function renderFavorites() {
     favoritesItems.innerHTML = `
       <div class="favorites__empty">
 
-        <span>🤍</span>
+        <span>\uD83E\uDD0D</span>
 
         <h3>لا توجد منتجات مفضلة</h3>
 
         <p>
-          اضغط على ❤️ بجانب أي منتج لإضافته إلى مفضلاتك.
+          اضغط على \u2764\uFE0F بجانب أي منتج لإضافته إلى مفضلاتك.
         </p>
 
       </div>
@@ -262,7 +265,7 @@ function renderFavorites() {
               type="button"
               data-index="${index}"
             >
-              🛒 أضف إلى السلة
+              \uD83D\uDED2 أضف إلى السلة
             </button>
 
             <button
@@ -271,7 +274,7 @@ function renderFavorites() {
               data-index="${index}"
               title="إزالة من المفضلة"
             >
-              إزالة من المفضلة 🗑️
+              إزالة من المفضلة \uD83D\uDDD1\uFE0F
             </button>
 
           </div>
@@ -312,12 +315,12 @@ function renderFavorites() {
         addToCart(index);
 
         button.textContent =
-          "✓ تمت الإضافة";
+          "\u2713 تمت الإضافة";
 
         setTimeout(() => {
 
           button.textContent =
-            "🛒 أضف إلى السلة";
+            "\uD83D\uDED2 أضف إلى السلة";
 
         }, 900);
 
@@ -346,7 +349,7 @@ function toggleFavorite(productIndex, button) {
 
       button.classList.remove("is-active");
 
-      button.textContent = "🤍";
+      button.textContent = "\uD83E\uDD0D";
 
       button.setAttribute(
         "aria-label",
@@ -363,7 +366,7 @@ function toggleFavorite(productIndex, button) {
 
       button.classList.add("is-active");
 
-      button.textContent = "❤️";
+      button.textContent = "\u2764\uFE0F";
 
       button.setAttribute(
         "aria-label",
@@ -414,7 +417,7 @@ function removeFromFavorites(productIndex) {
 
     button.classList.remove("is-active");
 
-    button.textContent = "🤍";
+    button.textContent = "\uD83E\uDD0D";
 
     button.setAttribute(
       "aria-label",
@@ -662,7 +665,7 @@ function renderProducts() {
               }"
               type="button"
             >
-              ${isFavorite ? "❤️" : "🤍"}
+              ${isFavorite ? "\u2764\uFE0F" : "\uD83E\uDD0D"}
             </button>
 
           </div>
@@ -723,7 +726,7 @@ function renderProducts() {
                 data-index="${index}"
                 type="button"
               >
-                🛒 Add to cart
+                \uD83D\uDED2 Add to cart
               </button>
 
             </div>
@@ -880,7 +883,7 @@ function addToCart(productIndex) {
     const originalText =
       addButton.innerHTML;
 
-    addButton.innerHTML = "✓ Added";
+    addButton.innerHTML = "\u2713 Added";
 
 
     setTimeout(() => {
@@ -1029,7 +1032,7 @@ function renderCart() {
     cartItems.innerHTML = `
       <div class="cart__empty">
 
-        <span>🛍️</span>
+        <span>\uD83D\uDECD\uFE0F</span>
 
         <h3>السلة فارغة</h3>
 
@@ -1132,7 +1135,7 @@ function renderCart() {
             data-index="${item.index}"
             aria-label="حذف المنتج"
           >
-            🗑️
+            \uD83D\uDDD1\uFE0F
           </button>
 
         </div>
@@ -1306,19 +1309,19 @@ function validateCheckoutForm() {
     {
       inputId: "customerName",
       errorId: "errorName",
-      message: "من فضلك اكتبي الاسم ❤️",
+      message: "من فضلك اكتبي الاسم \u2764\uFE0F",
       validate: (value) => value.trim().length > 0,
     },
     {
       inputId: "customerPhone",
       errorId: "errorPhone",
-      message: "من فضلك اكتبي رقم صحيح (11 رقم) 📞",
+      message: "من فضلك اكتبي رقم صحيح (11 رقم) \uD83D\uDCDE",
       validate: (value) => /^01[0125][0-9]{8}$/.test(value.trim()),
     },
     {
       inputId: "customerAddress",
       errorId: "errorAddress",
-      message: "من فضلك اكتبي عنوان التوصيل 📍",
+      message: "من فضلك اكتبي عنوان التوصيل \uD83D\uDCCD",
       validate: (value) => value.trim().length > 0,
     },
   ];
@@ -1360,7 +1363,7 @@ function sendCartToWhatsApp() {
   if (cart.length === 0) {
 
     alert(
-      "السلة فارغة. أضف منتجًا واحدًا على الأقل أولًا 🛍️"
+      "السلة فارغة. أضف منتجًا واحدًا على الأقل أولًا \uD83D\uDECD\uFE0F"
     );
 
     return;
@@ -1390,15 +1393,26 @@ function sendCartToWhatsApp() {
     document.getElementById("customerAddress").value.trim();
 
 
+  /* Unicode emojis */
+
+  const bow = "\uD83C\uDF80";
+  const shoppingBag = "\uD83D\uDECD\uFE0F";
+  const person = "\uD83D\uDC64";
+  const phone = "\uD83D\uDCDE";
+  const location = "\uD83D\uDCCD";
+  const money = "\uD83D\uDCB0";
+  const hearts = "\uD83D\uDC95";
+
+
   /* Order Message */
 
-  let message = `Hello Pink & Paper! 🎀
+  let message = `Hello Pink & Paper! ${bow}
 
-🛍️ طلب جديد
+${shoppingBag} طلب جديد
 
-👤 الاسم: ${customerName}
-📞 رقم التواصل: ${customerPhone}
-📍 العنوان: ${customerAddress}
+${person} الاسم: ${customerName}
+${phone} رقم التواصل: ${customerPhone}
+${location} العنوان: ${customerAddress}
 
 المنتجات:
 
@@ -1427,9 +1441,9 @@ function sendCartToWhatsApp() {
     calculateCartTotal();
 
 
-  message += `💰 الإجمالي: ${total} EGP
+  message += `${money} الإجمالي: ${total} EGP
 
-Thank you! 💕`;
+Thank you! ${hearts}`;
 
 
   /* Open WhatsApp in a new tab, so the store stays open behind it */
@@ -1763,8 +1777,10 @@ function setupThankYou() {
 
 function wireGeneralWhatsAppLinks() {
 
+  const bow = "\uD83C\uDF80";
+
   const generalMessage =
-    "Hello Pink & Paper! 🎀\nI'd like to know more about your products.";
+    `Hello Pink & Paper! ${bow}\nI'd like to know more about your products.`;
 
 
   const link =
@@ -2103,7 +2119,7 @@ function renderFilterBar() {
 
 
   const chipsHTML =
-    [`<button class="filter-chip is-active" type="button" data-filter="all">✨ الكل</button>`]
+    [`<button class="filter-chip is-active" type="button" data-filter="all">\u2728 الكل</button>`]
       .concat(
         activeCategories.map(
           category => `
