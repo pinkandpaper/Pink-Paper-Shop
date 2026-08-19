@@ -190,6 +190,108 @@
 
 </aside>
 
+<!-- ============ PRODUCT DETAILS PAGE ============ -->
+<div class="product-overlay" id="productOverlay"></div>
+
+<section
+  class="product-page"
+  id="productPage"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="productPageName"
+>
+  <div class="product-page__header">
+    <button
+      class="product-page__back"
+      id="productPageClose"
+      aria-label="رجوع"
+      type="button"
+    >
+      →
+    </button>
+    <span class="tape-label">تفاصيل المنتج</span>
+  </div>
+
+  <div class="product-page__body">
+    <!-- Gallery -->
+    <div class="product-page__gallery">
+      <div class="product-page__main-image" id="productPageMainImage">
+        <img id="productPageImg" src="" alt="" />
+        <span class="product-page__zoom-hint">🔍 اضغط للتكبير</span>
+      </div>
+
+      <div class="product-page__thumbs" id="productPageThumbs"></div>
+    </div>
+
+    <!-- Info -->
+    <div class="product-page__info">
+      <h2 class="product-page__name" id="productPageName"></h2>
+      <p class="product-page__id" id="productPageId"></p>
+      <p class="product-page__price" id="productPagePrice"></p>
+      <p class="product-page__desc" id="productPageDesc"></p>
+
+      <div class="product-page__quantity">
+        <span>الكمية</span>
+        <div class="quantity-control">
+          <button
+            type="button"
+            class="quantity-btn"
+            id="productPageDecrease"
+            aria-label="تقليل الكمية"
+          >
+            −
+          </button>
+          <span class="quantity-value" id="productPageQty">1</span>
+          <button
+            type="button"
+            class="quantity-btn"
+            id="productPageIncrease"
+            aria-label="زيادة الكمية"
+          >
+            +
+          </button>
+        </div>
+      </div>
+
+      <div class="product-page__actions">
+        <button
+          class="btn btn--primary product-page__add-cart"
+          id="productPageAddCart"
+          type="button"
+        >
+          🛒 أضف إلى السلة
+        </button>
+
+        <button
+          class="product-page__favorite"
+          id="productPageFavorite"
+          type="button"
+          aria-label="أضف إلى المفضلة"
+        >
+          🤍
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IMAGE LIGHTBOX (fullscreen viewer) ============ -->
+<div class="lightbox-overlay" id="lightboxOverlay"></div>
+
+<div
+  class="lightbox"
+  id="lightbox"
+  role="dialog"
+  aria-modal="true"
+  aria-label="عرض الصورة بالحجم الكامل"
+>
+  <button class="lightbox__close" id="lightboxClose" aria-label="إغلاق" type="button">×</button>
+  <button class="lightbox__prev" id="lightboxPrev" aria-label="الصورة السابقة" type="button">‹</button>
+  <img class="lightbox__image" id="lightboxImage" src="" alt="" />
+  <button class="lightbox__next" id="lightboxNext" aria-label="الصورة التالية" type="button">›</button>
+  <div class="lightbox__counter" id="lightboxCounter"></div>
+</div>
+
 <!-- ============ THANK YOU MODAL ============ -->
 <div class="thankyou-overlay" id="thankyouOverlay"></div>
 

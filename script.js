@@ -30,7 +30,7 @@ const WHATSAPP_NUMBER = "201043063085";
 
 const PRODUCTS = [
   {
-    id: "1",
+    id: "PP-001",
     name: "كريكتور",
     description: "شكل باندا 4 مللي",
     price: 10,
@@ -39,9 +39,9 @@ const PRODUCTS = [
   },
 
   {
-    id: "2",
-    name: "أستيكة Cake Roll \u2764\uFE0F",
-    description: "يلا نحلي بالكيك \uD83D\uDE0D",
+    id: "PP-002",
+    name: "أستيكة Cake Roll ❤️",
+    description: "يلا نحلي بالكيك 😍",
     price: 20,
     images: [
       "images/pen/photo_2026-08-15_22-08-20.jpg",
@@ -50,9 +50,9 @@ const PRODUCTS = [
   },
 
   {
-    id: "3",
-    name: "نوتة كرومي 4 فواصل \uD83C\uDF80",
-    description: "مقاس 10*12 سم تقريباً ",
+    id: "PP-003",
+    name: "نوتة كرومي 4 فواصل 🎀",
+    description: "مقاس 10*12 سم تقريباً",
     price: 30,
     images: [
       "images/NOTES/photo_2026-08-15_22-45-22.jpg",
@@ -61,8 +61,8 @@ const PRODUCTS = [
   },
 
   {
-    id: "4",
-    name: "أستيكة ايس كريم \uD83D\uDE0D",
+    id: "PP-004",
+    name: "أستيكة ايس كريم 😍",
     description: "",
     price: 15,
     image: "images/pen/photo_2026-08-15_23-17-17.jpg",
@@ -70,11 +70,12 @@ const PRODUCTS = [
   },
 
   {
-    id: "5",
-    name: "استكية قلم سوستة \u2665\uFE0F ",
+    id: "PP-005",
+    name: "استكية قلم سوستة ♥️",
     description: "استيكة حجم كبير",
     price: 45,
-    images: ["images/pen/photo_2026-08-15_23-21-08.jpg",
+    images: [
+      "images/pen/photo_2026-08-15_23-21-08.jpg",
       "images/pen/hjhjkhjhj.jpg",
       "images/pen/jdsfja.jpg",
       "images/pen/photo_2026-08-17_22-56-18.jpg"
@@ -83,22 +84,9 @@ const PRODUCTS = [
   },
 
   {
-    id: "6",
-    name: "ستيكي نوتس دبدوب \u2764\uFE0F",
-    description: "ورقها ناعم وكريمي جدا\uD83E\uDD0D فيها 70 ورقة",
-    price: 95,
-    images: [
-      "images/NOTES/photo_2026-08-15_23-31-33.jpg",
-      "images/NOTES/photo_2026-08-15_23-31-35.jpg",
-      "images/NOTES/photo_2026-08-15_23-31-37 (2).jpg",
-      "images/NOTES/photo_2026-08-15_23-31-37.jpg"
-    ],
-    category: "cute",
-  },
-  {
-    id: "7",
-    name: "ستيكي نوتس دبدوب \u2764\uFE0F",
-    description: "ورقها ناعم وكريمي جدا\uD83E\uDD0D فيها 70 ورقة",
+    id: "PP-006",
+    name: "ستيكي نوتس دبدوب ❤️",
+    description: "ورقها ناعم وكريمي جدا🥰 فيها 70 ورقة",
     price: 95,
     images: [
       "images/NOTES/photo_2026-08-15_23-31-33.jpg",
@@ -110,48 +98,108 @@ const PRODUCTS = [
   },
 
   {
-    id: "8",
+    id: "PP-007",
+    name: "ستيكي نوتس دبدوب ❤️",
+    description: "ورقها ناعم وكريمي جدا🥰 فيها 70 ورقة",
+    price: 95,
+    images: [
+      "images/NOTES/photo_2026-08-15_23-31-33.jpg",
+      "images/NOTES/photo_2026-08-15_23-31-35.jpg",
+      "images/NOTES/photo_2026-08-15_23-31-37 (2).jpg",
+      "images/NOTES/photo_2026-08-15_23-31-37.jpg"
+    ],
+    category: "cute",
+  },
+
+  {
+    id: "PP-008",
     name: "قلم سنون مجسم سليكون ♥️",
-    description:"" ,
-    price:15 ,
+    description: "",
+    price: 15,
     image: "images/pen/penssssss.jpg",
     category: "pens",
   },
 
   {
-    id: "9",
-    name: "قلم جاف باستكية ",
+    id: "PP-009",
+    name: "قلم جاف باستكية",
     description: "قلم جاف عملي بحبر قابل للمسح، مناسب للمدرسة والمذاكرة والكتابة اليومية. تقدر تمسح أخطاءك بسهولة وتكتب من جديد بدون فوضى أو شخبطة على الورق. 🖊️",
     price: 25,
     image: "images/pen/hgsdhdjhhfdsh.jpg",
     category: "pens",
   },
+
   {
-    id: "10",
+    id: "PP-010",
     name: "",
     description: "",
     price: 6,
     image: "",
     category: "",
   },
+
   {
-    id: "11",
+    id: "PP-011",
     name: "",
     description: "",
     price: 6,
     image: "",
     category: "",
   },
+
   {
-    id: "12",
+    id: "PP-012",
     name: "",
     description: "",
     price: 6,
+    image: "",
+    category: "",
+  },
+    {
+    id: "PP-012",
+    name: "",
+    description: "",
+    price: 0,
+    image: "",
+    category: "",
+  },
+
+  {
+    id: "PP-013",
+    name: "",
+    description: "",
+    price: 0,
+    image: "",
+    category: "",
+  },
+
+  {
+    id: "PP-014",
+    name: "",
+    description: "",
+    price: 0,
+    image: "",
+    category: "",
+  },
+
+  {
+    id: "PP-015",
+    name: "",
+    description: "",
+    price: 0,
+    image: "",
+    category: "",
+  },
+
+  {
+    id: "PP-016",
+    name: "",
+    description: "",
+    price: 0,
     image: "",
     category: "",
   },
 ];
-
 
 /* --------------------------------------------------------------------------
    2B. CATEGORY LABELS
@@ -606,6 +654,32 @@ function renderFavorites() {
     });
 
 
+  /*
+     Open the product page from a favorite item's image.
+  */
+
+  favoritesItems
+    .querySelectorAll(
+      ".favorite-item__image"
+    )
+    .forEach((imageWrap, favIndex) => {
+
+      imageWrap.style.cursor = "pointer";
+
+      imageWrap.addEventListener(
+        "click",
+        () => {
+
+          openProductPage(
+            favorites[favIndex]
+          );
+
+        }
+      );
+
+    });
+
+
   updateFavoritesCount();
 
 }
@@ -686,6 +760,18 @@ function toggleFavorite(
 
   renderFavorites();
 
+
+  /*
+     Keep the product page's favorite button in sync
+     if it's currently showing this product.
+  */
+
+  if (currentProductPageId === productId) {
+
+    updateProductPageFavoriteButton();
+
+  }
+
 }
 
 
@@ -735,6 +821,13 @@ function removeFromFavorites(
   updateFavoritesCount();
 
   renderFavorites();
+
+
+  if (currentProductPageId === productId) {
+
+    updateProductPageFavoriteButton();
+
+  }
 
 }
 
@@ -1095,7 +1188,7 @@ function renderProducts() {
 
 
   /*
-     Product thumbnails.
+     Product thumbnails (swap main image, don't open the product page).
   */
 
   grid
@@ -1106,7 +1199,10 @@ function renderProducts() {
 
       thumbnail.addEventListener(
         "click",
-        () => {
+        (event) => {
+
+          event.stopPropagation();
+
 
           const image =
             thumbnail.dataset.image;
@@ -1156,7 +1252,7 @@ function renderProducts() {
 
 
   /*
-     Favorite buttons.
+     Favorite buttons (don't open the product page).
   */
 
   grid
@@ -1167,7 +1263,10 @@ function renderProducts() {
 
       button.addEventListener(
         "click",
-        () => {
+        (event) => {
+
+          event.stopPropagation();
+
 
           const productId =
             button.dataset.id;
@@ -1184,7 +1283,7 @@ function renderProducts() {
 
 
   /*
-     Add to cart buttons.
+     Add to cart buttons (don't open the product page).
   */
 
   grid
@@ -1195,12 +1294,39 @@ function renderProducts() {
 
       button.addEventListener(
         "click",
-        () => {
+        (event) => {
+
+          event.stopPropagation();
+
 
           const productId =
             button.dataset.id;
 
           addToCart(productId);
+
+        }
+      );
+
+    });
+
+
+  /*
+     Clicking anywhere else on the card opens its product page.
+  */
+
+  grid
+    .querySelectorAll(
+      ".product-card"
+    )
+    .forEach((card) => {
+
+      card.addEventListener(
+        "click",
+        () => {
+
+          openProductPage(
+            card.dataset.id
+          );
 
         }
       );
@@ -1217,12 +1343,19 @@ function renderProducts() {
    17. ADD PRODUCT TO CART
    -------------------------------------------------------------------------- */
 
-function addToCart(productId) {
+function addToCart(productId, quantity = 1) {
 
   const product =
     getProductById(productId);
 
   if (!product) return;
+
+
+  const safeQuantity =
+    Math.max(
+      1,
+      Number(quantity) || 1
+    );
 
 
   const existingItem =
@@ -1233,13 +1366,14 @@ function addToCart(productId) {
 
   if (existingItem) {
 
-    existingItem.quantity += 1;
+    existingItem.quantity +=
+      safeQuantity;
 
   } else {
 
     cart.push({
       id: productId,
-      quantity: 1
+      quantity: safeQuantity
     });
 
   }
@@ -1275,6 +1409,992 @@ function addToCart(productId) {
     }, 900);
 
   }
+
+}
+
+
+/* --------------------------------------------------------------------------
+   17B. PRODUCT DETAILS PAGE
+   -------------------------------------------------------------------------- */
+
+let currentProductPageId = null;
+let productPageImages = [];
+let productPageIndex = 0;
+let productPageQuantity = 1;
+
+
+/*
+   Render the thumbnail row inside the product page.
+*/
+
+function renderProductPageThumbs() {
+
+  const thumbsWrap =
+    document.getElementById(
+      "productPageThumbs"
+    );
+
+  if (!thumbsWrap) return;
+
+
+  if (productPageImages.length <= 1) {
+
+    thumbsWrap.innerHTML = "";
+
+    return;
+
+  }
+
+
+  thumbsWrap.innerHTML =
+    productPageImages.map(
+      (image, index) => `
+        <button
+          class="product-thumbnail ${
+            index === productPageIndex
+              ? "is-active"
+              : ""
+          }"
+          type="button"
+          data-index="${index}"
+        >
+          <img src="${image}" alt="" />
+        </button>
+      `
+    ).join("");
+
+
+  thumbsWrap
+    .querySelectorAll(
+      ".product-thumbnail"
+    )
+    .forEach((thumbnail) => {
+
+      thumbnail.addEventListener(
+        "click",
+        () => {
+
+          setProductPageImage(
+            Number(thumbnail.dataset.index)
+          );
+
+        }
+      );
+
+    });
+
+}
+
+
+/*
+   Switch the main image shown in the product page.
+*/
+
+function setProductPageImage(index) {
+
+  if (
+    productPageImages.length === 0
+  ) return;
+
+
+  productPageIndex =
+    (
+      (index % productPageImages.length) +
+      productPageImages.length
+    ) % productPageImages.length;
+
+
+  const mainImg =
+    document.getElementById(
+      "productPageImg"
+    );
+
+
+  if (mainImg) {
+
+    mainImg.src =
+      productPageImages[
+        productPageIndex
+      ];
+
+  }
+
+
+  document
+    .querySelectorAll(
+      "#productPageThumbs .product-thumbnail"
+    )
+    .forEach((thumbnail, i) => {
+
+      thumbnail.classList.toggle(
+        "is-active",
+        i === productPageIndex
+      );
+
+    });
+
+}
+
+
+/*
+   Sync the heart button on the product page with favorites state.
+*/
+
+function updateProductPageFavoriteButton() {
+
+  const favoriteButton =
+    document.getElementById(
+      "productPageFavorite"
+    );
+
+  if (!favoriteButton) return;
+
+
+  const isFavorite =
+    currentProductPageId &&
+    favorites.includes(
+      currentProductPageId
+    );
+
+
+  favoriteButton.classList.toggle(
+    "is-active",
+    Boolean(isFavorite)
+  );
+
+
+  favoriteButton.textContent =
+    isFavorite
+      ? "\u2764\uFE0F"
+      : "\uD83E\uDD0D";
+
+}
+
+
+/*
+   Update the quantity shown/used in the product page.
+*/
+
+function setProductPageQuantity(quantity) {
+
+  productPageQuantity =
+    Math.max(
+      1,
+      Number(quantity) || 1
+    );
+
+
+  const qtyEl =
+    document.getElementById(
+      "productPageQty"
+    );
+
+
+  if (qtyEl) {
+
+    qtyEl.textContent =
+      productPageQuantity;
+
+  }
+
+}
+
+
+/*
+   Open the product details page for a given product ID.
+*/
+
+function openProductPage(productId) {
+
+  const product =
+    getProductById(productId);
+
+  if (!product) return;
+
+
+  currentProductPageId = productId;
+
+  productPageImages =
+    getProductImages(product);
+
+  productPageIndex = 0;
+
+
+  const nameEl =
+    document.getElementById(
+      "productPageName"
+    );
+
+  const idEl =
+    document.getElementById(
+      "productPageId"
+    );
+
+  const priceEl =
+    document.getElementById(
+      "productPagePrice"
+    );
+
+  const descEl =
+    document.getElementById(
+      "productPageDesc"
+    );
+
+  const mainImg =
+    document.getElementById(
+      "productPageImg"
+    );
+
+
+  if (nameEl) nameEl.textContent = product.name;
+
+  if (idEl) idEl.textContent = `كود المنتج: ${product.id}`;
+
+  if (priceEl) priceEl.textContent = `${product.price} EGP`;
+
+  if (descEl) descEl.textContent = product.description;
+
+  if (mainImg) {
+
+    mainImg.src =
+      productPageImages[0];
+
+    mainImg.alt =
+      product.name;
+
+  }
+
+
+  renderProductPageThumbs();
+
+  setProductPageQuantity(1);
+
+  updateProductPageFavoriteButton();
+
+
+  const productPage =
+    document.getElementById(
+      "productPage"
+    );
+
+  const overlay =
+    document.getElementById(
+      "productOverlay"
+    );
+
+
+  if (productPage) {
+
+    productPage.classList.add(
+      "is-open"
+    );
+
+    productPage.scrollTop = 0;
+
+  }
+
+
+  if (overlay) {
+
+    overlay.classList.add(
+      "is-open"
+    );
+
+  }
+
+
+  document.body.style.overflow =
+    "hidden";
+
+}
+
+
+/*
+   Close the product details page.
+*/
+
+function closeProductPage() {
+
+  const productPage =
+    document.getElementById(
+      "productPage"
+    );
+
+  const overlay =
+    document.getElementById(
+      "productOverlay"
+    );
+
+
+  if (productPage) {
+
+    productPage.classList.remove(
+      "is-open"
+    );
+
+  }
+
+
+  if (overlay) {
+
+    overlay.classList.remove(
+      "is-open"
+    );
+
+  }
+
+
+  document.body.style.overflow = "";
+
+
+  currentProductPageId = null;
+
+}
+
+
+/*
+   Wire up all product-page interactions.
+*/
+
+function setupProductPage() {
+
+  const productPageClose =
+    document.getElementById(
+      "productPageClose"
+    );
+
+  const productOverlay =
+    document.getElementById(
+      "productOverlay"
+    );
+
+  const decreaseBtn =
+    document.getElementById(
+      "productPageDecrease"
+    );
+
+  const increaseBtn =
+    document.getElementById(
+      "productPageIncrease"
+    );
+
+  const addCartBtn =
+    document.getElementById(
+      "productPageAddCart"
+    );
+
+  const favoriteBtn =
+    document.getElementById(
+      "productPageFavorite"
+    );
+
+  const mainImageWrap =
+    document.getElementById(
+      "productPageMainImage"
+    );
+
+
+  if (productPageClose) {
+
+    productPageClose.addEventListener(
+      "click",
+      closeProductPage
+    );
+
+  }
+
+
+  if (productOverlay) {
+
+    productOverlay.addEventListener(
+      "click",
+      closeProductPage
+    );
+
+  }
+
+
+  if (decreaseBtn) {
+
+    decreaseBtn.addEventListener(
+      "click",
+      () => {
+
+        setProductPageQuantity(
+          productPageQuantity - 1
+        );
+
+      }
+    );
+
+  }
+
+
+  if (increaseBtn) {
+
+    increaseBtn.addEventListener(
+      "click",
+      () => {
+
+        setProductPageQuantity(
+          productPageQuantity + 1
+        );
+
+      }
+    );
+
+  }
+
+
+  if (addCartBtn) {
+
+    addCartBtn.addEventListener(
+      "click",
+      () => {
+
+        if (!currentProductPageId) return;
+
+
+        addToCart(
+          currentProductPageId,
+          productPageQuantity
+        );
+
+
+        const originalText =
+          addCartBtn.innerHTML;
+
+        addCartBtn.innerHTML =
+          "\u2713 تمت الإضافة";
+
+
+        setTimeout(() => {
+
+          addCartBtn.innerHTML =
+            originalText;
+
+        }, 900);
+
+      }
+    );
+
+  }
+
+
+  if (favoriteBtn) {
+
+    favoriteBtn.addEventListener(
+      "click",
+      () => {
+
+        if (!currentProductPageId) return;
+
+
+        toggleFavorite(
+          currentProductPageId,
+          document.querySelector(
+            `.favorite-btn[data-id="${currentProductPageId}"]`
+          )
+        );
+
+
+        updateProductPageFavoriteButton();
+
+      }
+    );
+
+  }
+
+
+  /*
+     Clicking the main image opens the fullscreen lightbox.
+  */
+
+  if (mainImageWrap) {
+
+    mainImageWrap.addEventListener(
+      "click",
+      () => {
+
+        openLightbox(
+          productPageImages,
+          productPageIndex
+        );
+
+      }
+    );
+
+
+    /*
+       Swipe left/right on the main image to flip between photos.
+    */
+
+    setupSwipe(
+      mainImageWrap,
+      () => setProductPageImage(productPageIndex + 1),
+      () => setProductPageImage(productPageIndex - 1)
+    );
+
+  }
+
+
+  document.addEventListener(
+    "keydown",
+    (event) => {
+
+      if (
+        event.key === "Escape" &&
+        currentProductPageId
+      ) {
+
+        closeProductPage();
+
+      }
+
+    }
+  );
+
+}
+
+
+/* --------------------------------------------------------------------------
+   17C. FULLSCREEN IMAGE LIGHTBOX
+   -------------------------------------------------------------------------- */
+
+let lightboxImages = [];
+let lightboxIndex = 0;
+
+
+/*
+   Show whichever image lightboxIndex currently points to.
+*/
+
+function renderLightboxImage() {
+
+  const img =
+    document.getElementById(
+      "lightboxImage"
+    );
+
+  const counter =
+    document.getElementById(
+      "lightboxCounter"
+    );
+
+  const prevBtn =
+    document.getElementById(
+      "lightboxPrev"
+    );
+
+  const nextBtn =
+    document.getElementById(
+      "lightboxNext"
+    );
+
+
+  if (
+    !img ||
+    lightboxImages.length === 0
+  ) return;
+
+
+  img.src =
+    lightboxImages[lightboxIndex];
+
+
+  const hasMultiple =
+    lightboxImages.length > 1;
+
+
+  if (counter) {
+
+    counter.textContent =
+      hasMultiple
+        ? `${lightboxIndex + 1} / ${lightboxImages.length}`
+        : "";
+
+    counter.style.display =
+      hasMultiple ? "block" : "none";
+
+  }
+
+
+  if (prevBtn) {
+
+    prevBtn.classList.toggle(
+      "is-hidden",
+      !hasMultiple
+    );
+
+  }
+
+
+  if (nextBtn) {
+
+    nextBtn.classList.toggle(
+      "is-hidden",
+      !hasMultiple
+    );
+
+  }
+
+}
+
+
+/*
+   Open the fullscreen viewer for a set of images.
+*/
+
+function openLightbox(images, startIndex = 0) {
+
+  if (
+    !images ||
+    images.length === 0
+  ) return;
+
+
+  lightboxImages = images;
+
+  lightboxIndex =
+    (
+      (startIndex % images.length) +
+      images.length
+    ) % images.length;
+
+
+  renderLightboxImage();
+
+
+  const lightbox =
+    document.getElementById(
+      "lightbox"
+    );
+
+  const overlay =
+    document.getElementById(
+      "lightboxOverlay"
+    );
+
+
+  if (lightbox) {
+
+    lightbox.classList.add(
+      "is-open"
+    );
+
+  }
+
+
+  if (overlay) {
+
+    overlay.classList.add(
+      "is-open"
+    );
+
+  }
+
+
+  document.body.style.overflow =
+    "hidden";
+
+}
+
+
+/*
+   Close the fullscreen viewer.
+*/
+
+function closeLightbox() {
+
+  const lightbox =
+    document.getElementById(
+      "lightbox"
+    );
+
+  const overlay =
+    document.getElementById(
+      "lightboxOverlay"
+    );
+
+
+  if (lightbox) {
+
+    lightbox.classList.remove(
+      "is-open"
+    );
+
+  }
+
+
+  if (overlay) {
+
+    overlay.classList.remove(
+      "is-open"
+    );
+
+  }
+
+
+  /*
+     Only unlock scrolling if the product page isn't
+     also open behind the lightbox.
+  */
+
+  if (!currentProductPageId) {
+
+    document.body.style.overflow = "";
+
+  }
+
+}
+
+
+/*
+   Move to the next/previous image in the lightbox.
+*/
+
+function lightboxNext() {
+
+  if (lightboxImages.length === 0) return;
+
+
+  lightboxIndex =
+    (lightboxIndex + 1) %
+    lightboxImages.length;
+
+
+  renderLightboxImage();
+
+}
+
+
+function lightboxPrev() {
+
+  if (lightboxImages.length === 0) return;
+
+
+  lightboxIndex =
+    (
+      lightboxIndex - 1 +
+      lightboxImages.length
+    ) % lightboxImages.length;
+
+
+  renderLightboxImage();
+
+}
+
+
+/*
+   Generic swipe-detection helper. Calls onSwipeLeft / onSwipeRight
+   when a horizontal drag/swipe crosses a small threshold. Used for
+   both the lightbox and the product page's main image.
+*/
+
+function setupSwipe(element, onSwipeLeft, onSwipeRight) {
+
+  if (!element) return;
+
+
+  let touchStartX = 0;
+
+  let touchStartY = 0;
+
+  let isTracking = false;
+
+
+  element.addEventListener(
+    "touchstart",
+    (event) => {
+
+      if (event.touches.length !== 1) return;
+
+
+      touchStartX =
+        event.touches[0].clientX;
+
+      touchStartY =
+        event.touches[0].clientY;
+
+      isTracking = true;
+
+    },
+    { passive: true }
+  );
+
+
+  element.addEventListener(
+    "touchend",
+    (event) => {
+
+      if (!isTracking) return;
+
+      isTracking = false;
+
+
+      const touch =
+        event.changedTouches[0];
+
+      if (!touch) return;
+
+
+      const deltaX =
+        touch.clientX - touchStartX;
+
+      const deltaY =
+        touch.clientY - touchStartY;
+
+
+      /*
+         Ignore mostly-vertical drags (the user is scrolling).
+      */
+
+      if (
+        Math.abs(deltaX) < 40 ||
+        Math.abs(deltaX) < Math.abs(deltaY)
+      ) return;
+
+
+      /*
+         Note: in RTL image galleries a "left" swipe visually
+         still means "next image" in this implementation.
+      */
+
+      if (deltaX < 0) {
+
+        onSwipeLeft();
+
+      } else {
+
+        onSwipeRight();
+
+      }
+
+    },
+    { passive: true }
+  );
+
+}
+
+
+/*
+   Wire up the lightbox's own controls.
+*/
+
+function setupLightbox() {
+
+  const lightboxClose =
+    document.getElementById(
+      "lightboxClose"
+    );
+
+  const lightboxOverlay =
+    document.getElementById(
+      "lightboxOverlay"
+    );
+
+  const lightboxPrevBtn =
+    document.getElementById(
+      "lightboxPrev"
+    );
+
+  const lightboxNextBtn =
+    document.getElementById(
+      "lightboxNext"
+    );
+
+  const lightboxImageEl =
+    document.getElementById(
+      "lightboxImage"
+    );
+
+
+  if (lightboxClose) {
+
+    lightboxClose.addEventListener(
+      "click",
+      closeLightbox
+    );
+
+  }
+
+
+  if (lightboxOverlay) {
+
+    lightboxOverlay.addEventListener(
+      "click",
+      closeLightbox
+    );
+
+  }
+
+
+  if (lightboxPrevBtn) {
+
+    lightboxPrevBtn.addEventListener(
+      "click",
+      lightboxPrev
+    );
+
+  }
+
+
+  if (lightboxNextBtn) {
+
+    lightboxNextBtn.addEventListener(
+      "click",
+      lightboxNext
+    );
+
+  }
+
+
+  setupSwipe(
+    lightboxImageEl,
+    lightboxNext,
+    lightboxPrev
+  );
+
+
+  document.addEventListener(
+    "keydown",
+    (event) => {
+
+      const lightbox =
+        document.getElementById(
+          "lightbox"
+        );
+
+      if (
+        !lightbox ||
+        !lightbox.classList.contains(
+          "is-open"
+        )
+      ) return;
+
+
+      if (event.key === "Escape") {
+
+        closeLightbox();
+
+      }
+
+
+      if (event.key === "ArrowRight") {
+
+        lightboxPrev();
+
+      }
+
+
+      if (event.key === "ArrowLeft") {
+
+        lightboxNext();
+
+      }
+
+    }
+  );
 
 }
 
@@ -3144,6 +4264,10 @@ document.addEventListener(
     setupFavorites();
 
     setupThankYou();
+
+    setupProductPage();
+
+    setupLightbox();
 
     setupCategoryFilters();
 
