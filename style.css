@@ -3488,6 +3488,124 @@ body {
   border-radius: var(--radius-pill);
 }
 
+/* ==========================================================================
+   PINK & PAPER — VIDEO GALLERY ADDITIONS
+   أضف هذا الكود في نهاية ملف style.css الموجود عندك.
+   (لم يتم إرفاق style.css ضمن الملفات، لذلك هذه القواعد إضافية فقط ولا
+   تكرر أو تصطدم مع أي كلاس موجود عندك بنفس الاسم — لو عندك بالفعل تنسيق
+   لـ .product-page__main-image أو .product-thumbnail، خلي القواعد دي بعده
+   في الملف عشان تكمل/تعدل عليه بدل ما تتجاهله.)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Product Page — main media area (image + video share the same box)
+   -------------------------------------------------------------------------- */
+
+#productPageMainImage {
+  position: relative;
+}
+
+#productPageImg,
+#productPageVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: inherit;
+  background: #fff;
+}
+
+#productPageVideo {
+  display: block;
+  outline: none;
+}
+
+/* Keep the "tap to zoom" hint from covering the video's own controls */
+.product-page__main-image:has(#productPageVideo[style*="display: block"])
+  .product-page__zoom-hint {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Video thumbnails (product page + product cards, if ever reused)
+   -------------------------------------------------------------------------- */
+
+.product-thumbnail.product-video-thumbnail {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-thumbnail.product-video-thumbnail video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.product-thumbnail.product-video-thumbnail .video-play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #d67a9e; /* Pink & Paper accent — adjust to match your palette */
+  font-size: 12px;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Fullscreen Lightbox — image + video wrapper
+   -------------------------------------------------------------------------- */
+
+.lightbox__media-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  max-width: 90vw;
+  max-height: 85vh;
+}
+
+.lightbox__image,
+.lightbox__video {
+  max-width: 90vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.lightbox__video {
+  background: #000;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive tweaks
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 640px) {
+  .product-thumbnail.product-video-thumbnail .video-play-icon {
+    width: 22px;
+    height: 22px;
+    font-size: 10px;
+  }
+
+  .lightbox__image,
+  .lightbox__video {
+    max-width: 94vw;
+    max-height: 80vh;
+  }
+}
 @media (max-width: 700px) {
   .lightbox__prev,
   .lightbox__next {
@@ -3508,4 +3626,51 @@ body {
     top: 14px;
     left: 14px;
   }
+}
+
+/* =========================================================
+   PRODUCT SIZE / VARIANT SELECTOR (product details page)
+   ========================================================= */
+
+.product-page__variants {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.variant-pill {
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--color-pink);
+  background-color: var(--color-white);
+  color: var(--color-brown);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.variant-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-pink-deep);
+}
+
+.variant-pill.is-active {
+  background-color: var(--color-pink-deep);
+  border-color: var(--color-pink-deep);
+  color: var(--color-white);
+  box-shadow: var(--shadow-card);
+}
+
+/* Size label shown under the product name inside the cart drawer */
+.cart-item__variant {
+  font-size: 0.78rem;
+  color: var(--color-mauve);
+  font-weight: 600;
+  margin-bottom: 2px;
 }

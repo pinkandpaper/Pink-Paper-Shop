@@ -217,6 +217,13 @@
     <div class="product-page__gallery">
       <div class="product-page__main-image" id="productPageMainImage">
         <img id="productPageImg" src="" alt="" />
+        <video
+          id="productPageVideo"
+          controls
+          playsinline
+          preload="metadata"
+          style="display: none;"
+        ></video>
         <span class="product-page__zoom-hint">🔍 اضغط للتكبير</span>
       </div>
 
@@ -227,6 +234,11 @@
     <div class="product-page__info">
       <h2 class="product-page__name" id="productPageName"></h2>
       <p class="product-page__id" id="productPageId"></p>
+
+      <!-- Size / variant selector (filled automatically by script.js
+           only when the product has multiple sizes) -->
+      <div class="product-page__variants" id="productPageVariants"></div>
+
       <p class="product-page__price" id="productPagePrice"></p>
       <p class="product-page__desc" id="productPageDesc"></p>
 
@@ -275,7 +287,7 @@
   </div>
 </section>
 
-<!-- ============ IMAGE LIGHTBOX (fullscreen viewer) ============ -->
+<!-- ============ MEDIA LIGHTBOX (fullscreen viewer: images + videos) ============ -->
 <div class="lightbox-overlay" id="lightboxOverlay"></div>
 
 <div
@@ -283,12 +295,24 @@
   id="lightbox"
   role="dialog"
   aria-modal="true"
-  aria-label="عرض الصورة بالحجم الكامل"
+  aria-label="عرض الصورة أو الفيديو بالحجم الكامل"
 >
   <button class="lightbox__close" id="lightboxClose" aria-label="إغلاق" type="button">×</button>
-  <button class="lightbox__prev" id="lightboxPrev" aria-label="الصورة السابقة" type="button">‹</button>
-  <img class="lightbox__image" id="lightboxImage" src="" alt="" />
-  <button class="lightbox__next" id="lightboxNext" aria-label="الصورة التالية" type="button">›</button>
+  <button class="lightbox__prev" id="lightboxPrev" aria-label="السابق" type="button">‹</button>
+
+  <div class="lightbox__media-wrap" id="lightboxMediaWrap">
+    <img class="lightbox__image" id="lightboxImage" src="" alt="" />
+    <video
+      class="lightbox__video"
+      id="lightboxVideo"
+      controls
+      playsinline
+      preload="metadata"
+      style="display: none;"
+    ></video>
+  </div>
+
+  <button class="lightbox__next" id="lightboxNext" aria-label="التالي" type="button">›</button>
   <div class="lightbox__counter" id="lightboxCounter"></div>
 </div>
 
