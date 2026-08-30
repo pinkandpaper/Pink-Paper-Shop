@@ -177,44 +177,118 @@ const PRODUCTS = [
   },
   {
     id: "PP-009",
-    name: "",
-    description:
-      "قلم جاف عملي بحبر قابل للمسح، مناسب للمدرسة والمذاكرة والكتابة اليومية. تقدر تمسح أخطاءك بسهولة وتكتب من جديد بدون فوضى أو شخبطة على الورق. 🖊️",
-    price: 25,
-    image: "",
-    category: "pens",
+    name: "Spring Sakura 🌸 Note Book 🥰",
+    description:`📝 80 ورقة بلون كريمي مريح للعين أثناء الكتابة.
+🐰 فواصل جانبية 
+🌸 تصميمات Kawaii لطيفة.
+والاهم بحجم A6 يعني معاك ف كل مكان للأفكار والملاحظات السريعة `,
+    price: 45,
+    images: ["images/notebooks/photo_2026-08-30_21-33-21.jpg",
+"images/notebooks/photo_2026-08-30_21-33-22.jpg",
+"images/notebooks/photo_2026-08-30_21-33-19 (2).jpg",
+"images/notebooks/photo_2026-08-30_21-33-20 (2).jpg",
+"images/notebooks/photo_2026-08-30_21-33-19.jpg",
+"images/notebooks/photo_2026-08-30_21-33-20.jpg",
+"images/notebooks/photo_2026-08-30_21-33-23.jpg",
+"images/notebooks/photo_2026-08-30_21-33-24.jpg"
+    ],
+    category: "notebooks",
   },
   {
     id: "PP-010",
-    name: "",
-    description: "",
-    price: 6,
-    image: "",
-    category: "",
+    name: "🖤 اسكتش ورق أسود",
+    description: `هو لسه في حد مجربش يكتب أو يرسم على الورق الأسود؟ 🖤✨
+
+كلنا عارفين إن الألوان على الورق الأبيض جميلة...
+بس على الأسود؟ خيااااال! 😍🎨
+
+جرب بنفسك وشوف الفرق!
+
+🖤 اسكتش ورق أسود
+📏 مقاس A5
+📄 30 شيت
+📝 ورق 80`,
+    price: 50,
+    images:[
+      "images/notebooks/photo_2026-08-30_21-42-32.jpg",
+      "images/notebooks/photo_2026-08-30_21-42-33 (2).jpg",
+      "images/notebooks/photo_2026-08-30_21-42-33.jpg",
+      "images/notebooks/photo_2026-08-30_21-42-34 (2).jpg",
+      "images/notebooks/photo_2026-08-30_21-42-34.jpg"
+    ] ,
+    category: "notebooks",
   },
   {
     id: "PP-011",
-    name: "",
-    description: "",
-    price: 6,
-    image: "",
-    category: "",
+    name: "قلم جل ناعم",
+    description: `أقلام لا تُقاوم بصراحة🥹💜
+
+خط وشكل ولون ولا أجمل🙆🏻‍♀️💜
+
+بعنوان البساطة واللطافة✨️💜
+
+أقلام جل ناعم وسلس جدا في الكتابة🫧💜
+
+بمقاس سن 0.5 ملى☁️💜
+
+متوفرة بأربع ألوان خارجية💜🩷🩵💚
+
+بتكتب أزرق جل فقط💜
+
+وسعرها بسيط جدا😁💜`,
+    price: 10,
+    images: ["images/pen/photo_2026-08-30_21-52-09.jpg",
+      "images/pen/photo_2026-08-30_21-52-06 (2).jpg",
+      "images/pen/photo_2026-08-30_21-52-07 (2).jpg",
+      "images/pen/photo_2026-08-30_21-52-07.jpg",
+      "images/pen/photo_2026-08-30_21-52-08 (2).jpg",
+      "images/pen/photo_2026-08-30_21-52-08.jpg"
+    ],
+    category: "pen",
   },
   {
     id: "PP-012",
-    name: "",
-    description: "",
-    price: 6,
-    image: "",
-    category: "",
+    name: "ستيكي نوتس لاصقة",
+    description: `🤍 شكل قلب مميز
+📄 60 ورقة
+مناسبة لتسجيل الملاحظات، التذكيرات، وفواصل الكتب.`,
+    price: 20,
+    image: "images/sticky/photo_2026-08-30_21-59-23.jpg",
+    category: "cute",
   },
   {
     id: "PP-017",
-    name: "",
-    description: "",
-    price: 0,
-    image: "",
-    category: "",
+    name: "دفتر جيب",
+    description: `لطيفة من برا ومُلونة من جوا☁️🤎
+
+صغيرة بس بتغرقك في تفاصيلها🥹🤎
+
+دفتر جيب صغير معاك في كل مكان 🐼☁️
+
+بتصميمات باندا مبهجة✨️☁️
+
+ه بطبقة بلاستيكة متينة وشفافة لحمايته من المياه أو الأتربة🫧
+
+مع 4 فواصل مختلفة لسهولة التنظيم والتقليب💡
+
+ورقه بقى حاجة تانية خالص كل قسم مفاجأة🙆🏻‍♀️🤎
+
+استمتعوا بالصور🤎
+
+آخر صورتين على الطبيعة🐼
+`,
+    price: 65,
+    images: ["images/notebooks/photo_2026-08-30_22-03-37.jpg",
+      "images/notebooks/photo_2026-08-30_22-03-35.jpg",
+      "images/notebooks/photo_2026-08-30_22-03-38 (2).jpg",
+      "images/notebooks/photo_2026-08-30_22-03-38.jpg",
+      "images/notebooks/photo_2026-08-30_22-03-39.jpg",
+      "images/notebooks/photo_2026-08-30_22-03-40 (2).jpg",
+      "images/notebooks/photo_2026-08-30_22-03-40.jpg",
+      "images/notebooks/photo_2026-08-30_22-03-41.jpg",
+      "images/notebooks/photo_2026-08-30_22-03-42.jpg"
+    ],
+    category: "notebooks",
   },
   {
     id: "PP-013",
