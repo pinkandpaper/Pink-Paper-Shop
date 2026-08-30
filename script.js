@@ -292,19 +292,64 @@ const PRODUCTS = [
   },
   {
     id: "PP-013",
-    name: "",
-    description: "",
-    price: 0,
-    image: "",
-    category: "",
+    name: "قلم  حبر جل أزرق🖊️",
+    description: `أقلام جيل كيوت بتصميمات Puppy Love & Drink Time اللطيفة، تجمع بين الشكل المميز والكتابة السلسة ✨🖊️
+
+💙 6 أقلام بتصميمات وألوان مختلفة
+
+🖊️ حبر جل أزرق
+
+📏 سن 0.5 mm للكتابة الدقيقة
+
+🤍 Grip مريح للاستخدام اليومي
+
+🔘 Push Button لسهولة الاستخدام
+
+🎀 تصميمات لطيفة مناسبة للمذاكرة، المكتب والجامعة
+اختاري التصميم المفضل ليكي وخلي كل كتابة ألطف! 🐶📝💖
+
+متوفرة بثلاث كروت مختلفة والكارت فيه قلمين صورتهم على الطبيعة في الآخر🩵
+
+`,
+    price: 45,
+    images: ["images/pen/photo_2026-08-30_23-14-42.jpg",
+      "images/pen/photo_2026-08-30_23-14-43 (2).jpg",
+      "images/pen/photo_2026-08-30_23-14-43.jpg",
+      "images/pen/photo_2026-08-30_23-14-44 (2).jpg",
+      "images/pen/photo_2026-08-30_23-14-44.jpg",
+      "images/pen/photo_2026-08-30_23-14-45.jpg",
+      "images/pen/photo_2026-08-30_23-14-42 (2).jpg",
+      "images/pen/photo_2026-08-30_23-14-46.jpg"
+    ],
+    category: "pens",
   },
   {
     id: "PP-014",
-    name: "",
-    description: "",
-    price: 0,
-    image: "",
-    category: "",
+    name: "أقلام جل",
+    description: `مناسب للأطفال لسن الـ30 😌🐧
+
+Penguin Wishes Gel Pens🐧 ✨
+
+قلم بشكل بطريق لذيذ أوي لأصحاب التميز🥹🩵
+
+مع جمل تحفيزية عليه😃🤍🖤
+
+وسلس جدا في الكتابة وخطه جل أزرق🩵☁️
+
+الكارت 2 قلم بسعر تحفة🐧
+`,
+    price: 45,
+    images:["images/pen/photo_2026-08-30_23-24-52.jpg",
+      "images/pen/photo_2026-08-30_23-24-47.jpg",
+      "images/pen/photo_2026-08-30_23-24-48.jpg",
+      "images/pen/photo_2026-08-30_23-24-49.jpg",
+      "images/pen/photo_2026-08-30_23-24-50 (2).jpg",
+      "images/pen/photo_2026-08-30_23-24-50.jpg",
+      "images/pen/photo_2026-08-30_23-24-51.jpg",
+      "images/pen/photo_2026-08-30_23-24-52.jpg",
+      "images/pen/photo_2026-08-30_23-24-53.jpg"
+    ] ,
+    category: "pens",
   },
   {
     id: "PP-015",
