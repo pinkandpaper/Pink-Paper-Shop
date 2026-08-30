@@ -110,8 +110,8 @@ const PRODUCTS = [
   },
   {
     id: "PP-005",
-    name: "استكية قلم سوستة ♥️",
-    description: "استيكة حجم كبير",
+    name: "",
+    description: "",
     price: 45,
     images: [
       "images/notebooks/photo_2026-08-29_21-45-07 (2).jpg",
@@ -119,7 +119,7 @@ const PRODUCTS = [
       "images/notebooks/photo_2026-08-29_21-45-08 (3).jpg",
       "images/notebooks/photo_2026-08-29_21-45-08.jpg",
     ],
-    videos: ["images/notebooks/video_2026-08-29_21-45-09.mp4"],
+    videos: ["https://res.cloudinary.com/jfczkywf/video/upload/video_2026-08-29_21-45-09.mp4"],
 
     category: "notebooks",
   },
