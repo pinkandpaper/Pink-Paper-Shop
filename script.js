@@ -181,7 +181,7 @@ const PRODUCTS = [
     description:
       "قلم جاف عملي بحبر قابل للمسح، مناسب للمدرسة والمذاكرة والكتابة اليومية. تقدر تمسح أخطاءك بسهولة وتكتب من جديد بدون فوضى أو شخبطة على الورق. 🖊️",
     price: 25,
-    image: "images/pen/hgsdhdjhhfdsh.jpg",
+    image: "",
     category: "pens",
   },
   {
