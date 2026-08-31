@@ -257,7 +257,7 @@ const PRODUCTS = [
     category: "cute",
   },
   {
-    id: "PP-017",
+    id: "PP-015",
     name: "دفتر جيب",
     description: `لطيفة من برا ومُلونة من جوا☁️🤎
 
@@ -353,20 +353,237 @@ Penguin Wishes Gel Pens🐧 ✨
   },
   {
     id: "PP-015",
-    name: "",
-    description: "",
-    price: 0,
-    image: "",
-    category: "",
+    name: "أقلام جاف ",
+    description: `أقلام لكل يوم وأي يوم🩵🫧
+
+أقلام MOTION بخط جاف أزرق ومقاس سن 0.7 mm🩵
+`,
+    price: 10,
+    images: ["images/pen/photo_2026-08-31_05-21-25 (2).jpg",
+      "images/pen/photo_2026-08-31_05-21-24 (2).jpg",
+      "images/pen/photo_2026-08-31_05-21-23.jpg",
+      "images/pen/photo_2026-08-31_05-21-24.jpg",
+      "images/pen/photo_2026-08-31_05-21-25.jpg"
+    ],
+    category: "pens",
   },
-  {
-    id: "PP-016",
-    name: "",
-    description: "",
-    price: 0,
-    image: "",
-    category: "",
-  },
+ {
+  id: "PP-016",
+  name: "",
+  description: `لاغني عن الأقلام دا لمكتبك✨️
+
+لكتابة سهلة و colorful 🎨
+
+وسن رفيع للتحديد وللدقة🎗
+
+مناسبة للمذاكرة، الرسم، الـ Journaling وتدوين الملاحظات✒️
+
+ألوان زاهية ومتنوعة ومقاس السن 0.4mm`,
+  variants: [
+      { name: "لون 24", price: 280 },
+      { name: "12 لون", price: 145 },
+      { name: "10 لون", price: 130},
+       { name: "6 لون", price: 85}
+    ],
+  images: ["images/pen/photo_2026-08-31_05-45-44.jpg",
+    "images/pen/photo_2026-08-31_05-45-45.jpg",
+    "images/pen/photo_2026-08-31_05-45-45 (2).jpg",
+    "images/pen/photo_2026-08-31_05-45-43.jpg",
+    "images/pen/photo_2026-08-31_05-45-43 (2).jpg",
+    "images/pen/photo_2026-08-31_05-45-42.jpg",
+    "images/pen/photo_2026-08-31_05-45-42 (2).jpg",
+    "images/pen/photo_2026-08-31_05-45-41.jpg",
+    "images/pen/photo_2026-08-31_05-45-41 (2).jpg",
+    "images/pen/photo_2026-08-31_05-45-40.jpg"
+  ],
+  category: "pen",
+},
+{
+  id: "PP-017",
+  name: "أقلام جاف",
+  description: `أقلام Winnie محبوبة الجماهير🥹🎀
+
+اتوفرت تاني بس بطلب جماهيري بكل الألوان✨️
+
+حاليًا موجودة باللون الأزرق، والأسود والأحمر🌟
+
+بتصميم بسيط ولطيف🌸
+
+وخط ناعم وسلس وسن مقاس 5 ملى😌🎀
+
+`,
+  price: 10,
+  images: ["images/pen/photo_2026-08-31_05-57-28.jpg",
+    "images/pen/photo_2026-08-31_05-57-29.jpg",
+    "images/pen/photo_2026-08-31_05-57-30 (2).jpg",
+    "images/pen/photo_2026-08-31_05-57-30.jpg",
+    "images/pen/photo_2026-08-31_05-57-31 (2).jpg",
+    "images/pen/photo_2026-08-31_05-57-31.jpg"
+  ],
+  category: "pen",
+},
+{
+  id: "PP-018",
+  name: "شريط ديكوري🌸",
+  description: `الحاجات الصغيرة... هي اللي بتفرق. 🤍
+
+وردة صغيرة على طرف الصفحة...
+لمسة بسيطة في النوت...
+لون يفتح النفس على المذاكرة...
+
+كلها تفاصيل تخلي يومك ألطف. 🌼
+
+✨ شريط ديكوري بطول 6 متر.
+🌸 تصميمات زهور جميلة.
+📝 مناسب لكل محبي التنظيم والبلانرز والجورنالنج.`,
+  price: 60,
+  images: ["images/cute/photo_2026-08-31_06-23-31 (2).jpg",
+    "images/cute/photo_2026-08-31_06-23-30.jpg",
+    "images/cute/photo_2026-08-31_06-23-31 (3).jpg",
+    "images/cute/photo_2026-08-31_06-23-31.jpg",
+    "images/cute/photo_2026-08-31_06-23-32 (2).jpg"
+  ],
+  category: "cute",
+},
+{
+  id: "PP-019",
+  name: "أقلام I'm just a girl 🌸✨️",
+  description: `خط ناعم جدا وسن مقاس 0.5 ✨️
+
+بيكتب أزرق جل تحفة🌸
+`,
+  price: 45,
+  images: ["images/pen/photo_2026-08-31_06-39-56.jpg",
+    "images/pen/photo_2026-08-31_06-39-57 (2).jpg",
+    "images/pen/photo_2026-08-31_06-39-57 (3).jpg",
+    "images/pen/photo_2026-08-31_06-39-57.jpg",
+    "images/pen/photo_2026-08-31_06-39-58 (2).jpg",
+    "images/pen/photo_2026-08-31_06-39-58.jpg"
+  ],
+  category: "pen",
+},
+{
+  id: "PP-020",
+  name: "استيكي نوتسM&G",
+  description: `✨ مثالية للمذاكرة وتنظيم المهام
+📚 مناسبة للجامعة والمكتب
+🎀 شكلها الكيوت يخليها كمان إضافة لطيفة للـ Study Desk
+💛 اختاري الشكل اللي شبهك: كتكوت 🐥 | قطة 🐱 | بطريق 🐧`,
+  price: 35,
+  images: ["images/sticky/photo_2026-08-31_07-10-15 (2).jpg",
+    "images/sticky/photo_2026-08-31_07-10-14.jpg",
+    "images/sticky/photo_2026-08-31_07-10-15.jpg",
+    "images/sticky/photo_2026-08-31_07-10-12.jpg",
+    "images/sticky/photo_2026-08-31_07-10-13 (2).jpg",
+    "images/sticky/photo_2026-08-31_07-10-13.jpg",
+    "images/sticky/photo_2026-08-31_07-10-12 (2).jpg"
+  ],
+  category: "cute",
+},
+{
+  id: "PP-021",
+  name: "أقلام kiki Quokka من M&G🩷🩵",
+  description: `أقلام لذيذة جدا في الكتابة🩵✨️
+
+تصميم لطيف ومميز وخامة شيك جدا🩷✨️
+
+خطها سلس وناعم وبيجف بسرعة🌷
+
+جل أزرق وسنها مقاس 5 ملى✨️
+
+متوفرة بلونين أجمل من بعض🎀`,
+  price: 0,
+  images: [  "images/pen/photo_2026-08-31_07-35-41 (3).jpg",
+    "images/pen/photo_2026-08-31_07-35-39.jpg",
+    "images/pen/photo_2026-08-31_07-35-41 (2).jpg",
+    "images/pen/photo_2026-08-31_07-35-41.jpg",
+    "images/pen/photo_2026-08-31_07-35-42 (2).jpg",
+    "images/pen/photo_2026-08-31_07-35-42.jpg"
+  
+  ],
+  category: "pen",
+},
+{
+  id: "PP-022",
+  name: "M&G Magic Color Erasable Highlighter ✨",
+  description: ` بتحب ملاحظاتك تكون مرتبة وألوانها مريحة للعين، فـ Magic Color من M&G هو الاختيار المثالي. 🌈
+
+🖍️ 6 ألوان فسفوري واضحة
+
+✏️ طرف للتحديد + طرف للمسح لتعديل ملاحظاتك بسهولة
+
+📚 مثالي للمذاكرة، التخطيط، والـ Journaling
+
+لأن التفاصيل الصغيرة هي اللي بتفرق... خلي ملاحظاتك أجمل مع M&G Magic Color. 🤍`,
+  price: 135,
+  images:["images/highlighters/photo_2026-08-31_07-42-42.jpg",
+"images/highlighters/photo_2026-08-31_07-42-39.jpg",
+"images/highlighters/photo_2026-08-31_07-42-41.jpg",
+"images/highlighters/photo_2026-08-31_07-42-42 (2).jpg",
+"images/highlighters/photo_2026-08-31_07-42-44 (2).jpg",
+"images/highlighters/photo_2026-08-31_07-42-44.jpg",
+
+  ] ,
+  category: "pen",
+},
+{
+  id: "PP-023",
+  name: "اسكتش ورق أسود🖤",
+  description: `مش كل لوحة حلوة بتبدأ بورقة بيضا. 🖤
+
+أوقات الورق الأسود هو اللي بيخلي فكرتك تظهر بأجمل شكل.
+
+جرب الأبيض...
+وجرب الذهبي...
+وجرب الفضي...
+ويا سلام لو ميتالك🤎✨
+
+وشوف الفرق بنفسك. ✨
+A5
+30 ورقه`,
+  price: 45,
+  images: ["images/notebooks/photo_2026-08-31_07-53-33.jpg",
+"images/notebooks/photo_2026-08-31_07-53-30 (3).jpg",
+"images/notebooks/photo_2026-08-31_07-53-29.jpg",
+"images/notebooks/photo_2026-08-31_07-53-30 (2).jpg",
+"images/notebooks/photo_2026-08-31_07-53-30.jpg",
+"images/notebooks/photo_2026-08-31_07-53-28.jpg",
+
+
+  ],
+  category: "notebooks",
+},
+{
+  id: "PP-024",
+  name: "أقلام جل الباستيل",
+  description: `🖤 على الورق الأسود...
+كل لون بيحكي حكاية.
+
+🤍 الأبيض للنقاء.
+💛 الأصفر للتفاؤل.
+💚 الأخضر للبدايات.
+💙 الأزرق للأفكار.
+💜 البنفسجي للإبداع.
+💗 الوردي للتفاصيل الجميلة.
+`,
+  price: 20,
+  images: ["images/pen/photo_2026-08-31_08-01-06.jpg",
+    "images/pen/photo_2026-08-31_08-01-02.jpg",
+    "images/pen/photo_2026-08-31_08-01-03.jpg",
+    "images/pen/photo_2026-08-31_08-01-01.jpg",
+    "images/pen/photo_2026-08-31_08-01-00.jpg",
+    "images/pen/photo_2026-08-31_08-00-56.jpg"
+  ],
+  category: "pen",
+},
+{
+  id: "PP-025",
+  name: "",
+  description: "",
+  price: 0,
+  image: "",
+  category: "",
+},
 ];
 
 /* --------------------------------------------------------------------------
@@ -382,6 +599,7 @@ const CATEGORY_LABELS = {
   food: "🍱 مستلزمات الطعام والشراب",
   office: "🖇️ مستلزمات المكتب",
   party: "🎈 مستلزمات الحفلات والزينة",
+
 };
 
 /* --------------------------------------------------------------------------

@@ -1988,7 +1988,6 @@ body {
   }
 
   .category-grid,
-  .product-grid,
   .feature-grid,
   .contact-grid {
     grid-template-columns: 1fr;
@@ -3490,11 +3489,6 @@ body {
 
 /* ==========================================================================
    PINK & PAPER — VIDEO GALLERY ADDITIONS
-   أضف هذا الكود في نهاية ملف style.css الموجود عندك.
-   (لم يتم إرفاق style.css ضمن الملفات، لذلك هذه القواعد إضافية فقط ولا
-   تكرر أو تصطدم مع أي كلاس موجود عندك بنفس الاسم — لو عندك بالفعل تنسيق
-   لـ .product-page__main-image أو .product-thumbnail، خلي القواعد دي بعده
-   في الملف عشان تكمل/تعدل عليه بدل ما تتجاهله.)
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -3673,4 +3667,99 @@ body {
   color: var(--color-mauve);
   font-weight: 600;
   margin-bottom: 2px;
+}
+
+/* ==========================================================================
+   PRODUCT GRID — MOBILE: 2 columns, smaller cards
+   (يضبط شكل كروت المنتجات على الموبايل: عمودين جمب بعض بدل عمود واحد)
+   ========================================================================== */
+@media (max-width: 700px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .product-card__body {
+    padding: 12px 12px 14px;
+  }
+
+  .product-card__name {
+    font-size: 0.88rem;
+    margin-bottom: 4px;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+  }
+
+  .product-card__desc {
+    font-size: 0.74rem;
+    margin-bottom: 8px;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+  }
+
+  .product-card__id {
+    font-size: 0.64rem;
+    margin-bottom: 6px;
+  }
+
+  .product-card__footer {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .product-card__price {
+    font-size: 0.9rem;
+  }
+
+  .product-card__order {
+    font-size: 0.72rem;
+    padding: 7px 12px;
+    gap: 4px;
+  }
+
+  .favorite-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+    top: 8px;
+    right: 8px;
+  }
+
+  /* الصور المصغرة تحت الكارت بتاخد مساحة كبيرة على الموبايل، فبنخفيها من
+     شبكة المنتجات (بتفضل شغالة عادي جوه صفحة تفاصيل المنتج) */
+  .product-grid .product-thumbnails {
+    display: none;
+  }
+}
+
+/* Very small phones: 2 columns still, just tighter spacing */
+@media (max-width: 400px) {
+  .product-grid {
+    gap: 10px;
+  }
+
+  .product-card__body {
+    padding: 10px 10px 12px;
+  }
+
+  .product-card__name {
+    font-size: 0.82rem;
+  }
+
+  .product-card__price {
+    font-size: 0.85rem;
+  }
+
+  .product-card__order {
+    font-size: 0.68rem;
+    padding: 6px 10px;
+  }
 }
