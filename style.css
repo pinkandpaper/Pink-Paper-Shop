@@ -3899,3 +3899,55 @@ body {
     font-size: 0.68rem;
   }
 }
+
+/* ==========================================================================
+   CONTACT ("تواصل معنا") — MOBILE: smaller, 2 columns
+   ========================================================================== */
+@media (max-width: 700px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .contact-card {
+    padding: 18px 12px;
+    border-radius: var(--radius-sm);
+  }
+
+  .contact-card__icon {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+
+  .contact-card h3 {
+    font-size: 0.84rem;
+    margin-bottom: 4px;
+  }
+
+  .contact-card p {
+    font-size: 0.74rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .contact-grid {
+    gap: 8px;
+  }
+
+  .contact-card {
+    padding: 14px 8px;
+  }
+
+  .contact-card__icon {
+    font-size: 1.3rem;
+    margin-bottom: 6px;
+  }
+
+  .contact-card h3 {
+    font-size: 0.76rem;
+  }
+
+  .contact-card p {
+    font-size: 0.68rem;
+  }
+}
